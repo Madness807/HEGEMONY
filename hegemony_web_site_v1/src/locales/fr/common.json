@@ -1,0 +1,26 @@
+{
+    "navigation": {
+        "menu": "Menu"
+    },
+    "tabs": {
+        "setupGuide": "Mise en Place",
+        "setup": "Config",
+        "phases": "Phases",
+        "board": "Plateau",
+        "stateDashboard": "Gestion État",
+        "taxes": "Impôts",
+        "fmi": "FMI",
+        "rules": "Règles",
+        "material": "Matériel",
+        "gallery": "Galerie",
+        "credits": "Crédits"
+    },
+    "header": {
+        "round": "Tour",
+        "players": "Joueurs"
+    },
+    "language": {
+        "name": "Français",
+        "code": "FR"
+    }
+}

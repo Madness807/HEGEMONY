@@ -1,0 +1,26 @@
+{
+    "navigation": {
+        "menu": "Menu"
+    },
+    "tabs": {
+        "setupGuide": "Setup Guide",
+        "setup": "Setup",
+        "phases": "Phases",
+        "board": "Board",
+        "stateDashboard": "State",
+        "taxes": "Taxes",
+        "fmi": "IMF",
+        "rules": "Rules",
+        "material": "Material",
+        "gallery": "Gallery",
+        "credits": "Credits"
+    },
+    "header": {
+        "round": "Round",
+        "players": "Players"
+    },
+    "language": {
+        "name": "English",
+        "code": "EN"
+    }
+}

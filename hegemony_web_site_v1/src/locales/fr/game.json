@@ -1,0 +1,248 @@
+{
+    "phases": {
+        "preparation": "Préparation",
+        "action": "Action",
+        "production": "Production",
+        "elections": "Élections",
+        "scoring": "Décompte"
+    },
+    "policies": {
+        "fiscal": "Politique Fiscale",
+        "labor": "Marché du Travail",
+        "taxation": "Imposition",
+        "healthWelfare": "Santé et Allocations",
+        "education": "Éducation",
+        "trade": "Commerce Extérieur",
+        "immigration": "Immigration"
+    },
+    "classes": {
+        "working": {
+            "name": "Classe Ouvrière",
+            "baseActions": {
+                "proposeLaw": {
+                    "name": "Proposer un Projet de Loi",
+                    "desc": "Placez votre pion sur une section adjacente. Option: 1 Influence pour Vote Immédiat."
+                },
+                "assignWorkers": {
+                    "name": "Assigner des Travailleurs",
+                    "desc": "Assignez jusqu'à 3 Travailleurs à des Entreprises et/ou Syndicats."
+                },
+                "buyGoods": {
+                    "name": "Acheter Biens/Services",
+                    "desc": "Choisissez 1 ressource, achetez auprès de 2 fournisseurs max. Limite: Population par fournisseur."
+                },
+                "strike": {
+                    "name": "Grève",
+                    "desc": "Placez jusqu'à 2 jetons Grève sur Entreprises (Travailleurs non sous contrat, Salaire N1-N2)."
+                },
+                "protest": {
+                    "name": "Manifestation",
+                    "desc": "Si ≥2 Travailleurs Inactifs de plus que postes disponibles: placez jeton Manifestation."
+                },
+                "politicalPressure": {
+                    "name": "Exercer Pression Politique",
+                    "desc": "Ajoutez 3 cubes Vote dans le sac."
+                }
+            },
+            "bonusActions": {
+                "healthServices": {
+                    "name": "Services de Santé",
+                    "desc": "Dépensez Santé = Population → +1 Prospérité, +2 PV, +1 Travailleur gris"
+                },
+                "training": {
+                    "name": "Formation/Éducation",
+                    "desc": "Dépensez Éducation = Population → +1 Prospérité, améliorez 1 Travailleur"
+                },
+                "useLuxury": {
+                    "name": "Utiliser le Luxe",
+                    "desc": "Dépensez Luxe = Population → +1 Prospérité"
+                },
+                "transferWorkers": {
+                    "name": "Muter des Travailleurs",
+                    "desc": "Échangez Travailleurs qualifiés (postes non qualifiés) avec Inactifs"
+                },
+                "collectBenefits": {
+                    "name": "Percevoir Allocations",
+                    "desc": "(4j) Prenez ressources de la zone Allocations État"
+                },
+                "repayLoan": {
+                    "name": "Rembourser Emprunt",
+                    "desc": "Payez 50Ꝟ, défaussez 1 Emprunt"
+                }
+            }
+        },
+        "middle": {
+            "name": "Classe Moyenne",
+            "baseActions": {
+                "proposeLaw": {
+                    "name": "Proposer un Projet de Loi",
+                    "desc": "Placez votre pion sur section adjacente. Option: 1 Influence pour Vote Immédiat."
+                },
+                "assignWorkers": {
+                    "name": "Assigner des Travailleurs",
+                    "desc": "Assignez jusqu'à 3 de vos Travailleurs à des Entreprises."
+                },
+                "buildCompany": {
+                    "name": "Construire une Entreprise",
+                    "desc": "Choisissez du marché, payez coût, créez avec Travailleurs Classe Moyenne. Option: assigner 1 Classe Ouvrière."
+                },
+                "sellCompany": {
+                    "name": "Vendre une Entreprise",
+                    "desc": "Défaussez Entreprise, recevez argent = coût. Travailleurs → Inactifs."
+                },
+                "export": {
+                    "name": "Vendre Marché Étranger",
+                    "desc": "Vendez selon carte Export. +1 PV par transaction."
+                },
+                "buyGoods": {
+                    "name": "Acheter Biens/Services",
+                    "desc": "Choisissez 1 ressource + 2 fournisseurs. Limite: Population par fournisseur."
+                },
+                "overtime": {
+                    "name": "Heures Supplémentaires",
+                    "desc": "Choisissez Entreprise sans Travailleurs sous contrat → produit. Mettez sous contrat, payez Salaire si Classe Ouvrière."
+                },
+                "politicalPressure": {
+                    "name": "Exercer Pression Politique",
+                    "desc": "Ajoutez 3 cubes Vote dans le sac."
+                }
+            },
+            "bonusActions": {
+                "healthServices": {
+                    "name": "Services de Santé",
+                    "desc": "Dépensez Santé = Population → +1 Prospérité, +2 PV, +1 Travailleur gris"
+                },
+                "training": {
+                    "name": "Formation/Éducation",
+                    "desc": "Dépensez Éducation = Population → +1 Prospérité, améliorez 1 Travailleur"
+                },
+                "useLuxury": {
+                    "name": "Utiliser le Luxe",
+                    "desc": "Dépensez Luxe = Population → +1 Prospérité"
+                },
+                "adjustPrices": {
+                    "name": "Ajuster les Prix",
+                    "desc": "Modifiez prix de vente sur votre plateau"
+                },
+                "adjustWages": {
+                    "name": "Ajuster les Salaires",
+                    "desc": "Modifiez Salaires. Si ↑: mettez Travailleurs sous contrat"
+                },
+                "transferWorkers": {
+                    "name": "Muter des Travailleurs",
+                    "desc": "Échangez Travailleurs qualifiés avec Inactifs"
+                },
+                "collectBenefits": {
+                    "name": "Percevoir Allocations",
+                    "desc": "(4j) Prenez ressources zone Allocations État"
+                },
+                "repayLoan": {
+                    "name": "Rembourser Emprunt",
+                    "desc": "Payez 50Ꝟ, défaussez 1 Emprunt"
+                }
+            }
+        },
+        "capitalist": {
+            "name": "Classe Capitaliste",
+            "baseActions": {
+                "proposeLaw": {
+                    "name": "Proposer un Projet de Loi",
+                    "desc": "Placez sur section adjacente. Option: Vote Immédiat."
+                },
+                "buyGoods": {
+                    "name": "Achats Biens/Services",
+                    "desc": "Choisissez 1 ressource. Limite: Entreprises par fournisseur."
+                },
+                "invest": {
+                    "name": "Investir dans Entreprise",
+                    "desc": "Choisissez et achetez. Assignez Travailleurs."
+                },
+                "sellCompany": {
+                    "name": "Vendre Entreprise",
+                    "desc": "Défaussez, recevez argent = coût."
+                },
+                "exports": {
+                    "name": "Exportations",
+                    "desc": "Vendez selon Accords Commerciaux."
+                },
+                "privatizations": {
+                    "name": "Privatisations",
+                    "desc": "Achetez Services Publics État."
+                },
+                "lobbying": {
+                    "name": "Lobbying",
+                    "desc": "Dépensez 10Ꝟ → +2 Influence."
+                },
+                "politicalPressure": {
+                    "name": "Exercer Pression Politique",
+                    "desc": "+3 cubes dans le sac."
+                }
+            },
+            "bonusActions": {
+                "healthServices": {
+                    "name": "Services de Santé",
+                    "desc": "Dépensez = Entreprises → +2 PV"
+                },
+                "training": {
+                    "name": "Formation/Éducation",
+                    "desc": "Améliorez Travailleur"
+                },
+                "useLuxury": {
+                    "name": "Utiliser le Luxe",
+                    "desc": "Dépensez = Entreprises → +2 PV"
+                },
+                "adjustPrices": {
+                    "name": "Ajuster Prix",
+                    "desc": "Modifiez prix de vente"
+                },
+                "adjustWages": {
+                    "name": "Ajuster Salaires",
+                    "desc": "Modifiez. Si ↑: contrats"
+                },
+                "repayLoan": {
+                    "name": "Rembourser Emprunt",
+                    "desc": "50Ꝟ → défausser"
+                }
+            }
+        },
+        "state": {
+            "name": "État",
+            "baseActions": {
+                "proposeLaw": {
+                    "name": "Proposer un Projet de Loi",
+                    "desc": "Section adjacente. Option: Vote."
+                },
+                "buyPublicServices": {
+                    "name": "Acheter Services Publics",
+                    "desc": "Payez coût Santé/Éducation."
+                },
+                "sellPublicServices": {
+                    "name": "Vendre Services Publics",
+                    "desc": "Privatisation."
+                },
+                "adjustServicesPrices": {
+                    "name": "Ajuster Prix Services",
+                    "desc": "Changez prix."
+                },
+                "vote": {
+                    "name": "Vote",
+                    "desc": "Vote Immédiat gratuit."
+                },
+                "borrow": {
+                    "name": "Emprunter",
+                    "desc": "Prenez 100Ꝟ + Emprunt."
+                }
+            },
+            "bonusActions": {
+                "buyInfluence": {
+                    "name": "Acheter Influence",
+                    "desc": "10Ꝟ → +1 Influence"
+                },
+                "repayLoan": {
+                    "name": "Rembourser Emprunt",
+                    "desc": "50Ꝟ → défausser"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,248 @@
+{
+    "phases": {
+        "preparation": "Preparation",
+        "action": "Action",
+        "production": "Production",
+        "elections": "Elections",
+        "scoring": "Scoring"
+    },
+    "policies": {
+        "fiscal": "Fiscal Policy",
+        "labor": "Labor Market",
+        "taxation": "Taxation",
+        "healthWelfare": "Health and Welfare",
+        "education": "Education",
+        "trade": "Foreign Trade",
+        "immigration": "Immigration"
+    },
+    "classes": {
+        "working": {
+            "name": "Working Class",
+            "baseActions": {
+                "proposeLaw": {
+                    "name": "Propose a Bill",
+                    "desc": "Place your pawn on an adjacent section. Option: 1 Influence for Immediate Vote."
+                },
+                "assignWorkers": {
+                    "name": "Assign Workers",
+                    "desc": "Assign up to 3 Workers to Companies and/or Unions."
+                },
+                "buyGoods": {
+                    "name": "Buy Goods/Services",
+                    "desc": "Choose 1 resource, buy from up to 2 suppliers. Limit: Population per supplier."
+                },
+                "strike": {
+                    "name": "Strike",
+                    "desc": "Place up to 2 Strike tokens on Companies (Workers not under contract, Wage N1-N2)."
+                },
+                "protest": {
+                    "name": "Protest",
+                    "desc": "If ≥2 idle Workers more than available positions: place Protest token."
+                },
+                "politicalPressure": {
+                    "name": "Political Pressure",
+                    "desc": "Add 3 Vote cubes to the bag."
+                }
+            },
+            "bonusActions": {
+                "healthServices": {
+                    "name": "Health Services",
+                    "desc": "Spend Health = Population → +1 Prosperity, +2 VP, +1 grey Worker"
+                },
+                "training": {
+                    "name": "Training/Education",
+                    "desc": "Spend Education = Population → +1 Prosperity, upgrade 1 Worker"
+                },
+                "useLuxury": {
+                    "name": "Use Luxury",
+                    "desc": "Spend Luxury = Population → +1 Prosperity"
+                },
+                "transferWorkers": {
+                    "name": "Transfer Workers",
+                    "desc": "Exchange skilled Workers (unskilled positions) with Idle Workers"
+                },
+                "collectBenefits": {
+                    "name": "Collect Benefits",
+                    "desc": "(4p) Take resources from State Benefits area"
+                },
+                "repayLoan": {
+                    "name": "Repay Loan",
+                    "desc": "Pay 50Ꝟ, discard 1 Loan"
+                }
+            }
+        },
+        "middle": {
+            "name": "Middle Class",
+            "baseActions": {
+                "proposeLaw": {
+                    "name": "Propose a Bill",
+                    "desc": "Place your pawn on adjacent section. Option: 1 Influence for Immediate Vote."
+                },
+                "assignWorkers": {
+                    "name": "Assign Workers",
+                    "desc": "Assign up to 3 of your Workers to Companies."
+                },
+                "buildCompany": {
+                    "name": "Build a Company",
+                    "desc": "Choose from market, pay cost, create with Middle Class Workers. Option: assign 1 Working Class."
+                },
+                "sellCompany": {
+                    "name": "Sell a Company",
+                    "desc": "Discard Company, receive money = cost. Workers → Idle."
+                },
+                "export": {
+                    "name": "Sell to Foreign Market",
+                    "desc": "Sell according to Export card. +1 VP per transaction."
+                },
+                "buyGoods": {
+                    "name": "Buy Goods/Services",
+                    "desc": "Choose 1 resource + 2 suppliers. Limit: Population per supplier."
+                },
+                "overtime": {
+                    "name": "Overtime",
+                    "desc": "Choose Company without Workers under contract → produces. Put under contract, pay Wage if Working Class."
+                },
+                "politicalPressure": {
+                    "name": "Political Pressure",
+                    "desc": "Add 3 Vote cubes to the bag."
+                }
+            },
+            "bonusActions": {
+                "healthServices": {
+                    "name": "Health Services",
+                    "desc": "Spend Health = Population → +1 Prosperity, +2 VP, +1 grey Worker"
+                },
+                "training": {
+                    "name": "Training/Education",
+                    "desc": "Spend Education = Population → +1 Prosperity, upgrade 1 Worker"
+                },
+                "useLuxury": {
+                    "name": "Use Luxury",
+                    "desc": "Spend Luxury = Population → +1 Prosperity"
+                },
+                "adjustPrices": {
+                    "name": "Adjust Prices",
+                    "desc": "Modify selling prices on your board"
+                },
+                "adjustWages": {
+                    "name": "Adjust Wages",
+                    "desc": "Modify Wages. If ↑: put Workers under contract"
+                },
+                "transferWorkers": {
+                    "name": "Transfer Workers",
+                    "desc": "Exchange skilled Workers with Idle Workers"
+                },
+                "collectBenefits": {
+                    "name": "Collect Benefits",
+                    "desc": "(4p) Take resources from State Benefits area"
+                },
+                "repayLoan": {
+                    "name": "Repay Loan",
+                    "desc": "Pay 50Ꝟ, discard 1 Loan"
+                }
+            }
+        },
+        "capitalist": {
+            "name": "Capitalist Class",
+            "baseActions": {
+                "proposeLaw": {
+                    "name": "Propose a Bill",
+                    "desc": "Place on adjacent section. Option: Immediate Vote."
+                },
+                "buyGoods": {
+                    "name": "Buy Goods/Services",
+                    "desc": "Choose 1 resource. Limit: Companies per supplier."
+                },
+                "invest": {
+                    "name": "Invest in Company",
+                    "desc": "Choose and buy. Assign Workers."
+                },
+                "sellCompany": {
+                    "name": "Sell Company",
+                    "desc": "Discard, receive money = cost."
+                },
+                "exports": {
+                    "name": "Exports",
+                    "desc": "Sell according to Trade Agreements."
+                },
+                "privatizations": {
+                    "name": "Privatizations",
+                    "desc": "Buy State Public Services."
+                },
+                "lobbying": {
+                    "name": "Lobbying",
+                    "desc": "Spend 10Ꝟ → +2 Influence."
+                },
+                "politicalPressure": {
+                    "name": "Political Pressure",
+                    "desc": "+3 cubes in the bag."
+                }
+            },
+            "bonusActions": {
+                "healthServices": {
+                    "name": "Health Services",
+                    "desc": "Spend = Companies → +2 VP"
+                },
+                "training": {
+                    "name": "Training/Education",
+                    "desc": "Upgrade Worker"
+                },
+                "useLuxury": {
+                    "name": "Use Luxury",
+                    "desc": "Spend = Companies → +2 VP"
+                },
+                "adjustPrices": {
+                    "name": "Adjust Prices",
+                    "desc": "Modify selling prices"
+                },
+                "adjustWages": {
+                    "name": "Adjust Wages",
+                    "desc": "Modify. If ↑: contracts"
+                },
+                "repayLoan": {
+                    "name": "Repay Loan",
+                    "desc": "50Ꝟ → discard"
+                }
+            }
+        },
+        "state": {
+            "name": "State",
+            "baseActions": {
+                "proposeLaw": {
+                    "name": "Propose a Bill",
+                    "desc": "Adjacent section. Option: Vote."
+                },
+                "buyPublicServices": {
+                    "name": "Buy Public Services",
+                    "desc": "Pay Health/Education cost."
+                },
+                "sellPublicServices": {
+                    "name": "Sell Public Services",
+                    "desc": "Privatization."
+                },
+                "adjustServicesPrices": {
+                    "name": "Adjust Services Prices",
+                    "desc": "Change prices."
+                },
+                "vote": {
+                    "name": "Vote",
+                    "desc": "Free Immediate Vote."
+                },
+                "borrow": {
+                    "name": "Borrow",
+                    "desc": "Take 100Ꝟ + Loan."
+                }
+            },
+            "bonusActions": {
+                "buyInfluence": {
+                    "name": "Buy Influence",
+                    "desc": "10Ꝟ → +1 Influence"
+                },
+                "repayLoan": {
+                    "name": "Repay Loan",
+                    "desc": "50Ꝟ → discard"
+                }
+            }
+        }
+    }
+}
