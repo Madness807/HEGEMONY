@@ -9,13 +9,13 @@ const InteractiveBoard = () => {
     const zones = BOARD_ZONES;
 
     return (
-        <div className="glass-effect rounded-xl p-6">
+        <div className="bg-surface-primary border border-border rounded-xl p-6">
             <h2 className="text-2xl font-bold text-amber-400 mb-6 flex items-center gap-3">
                 <span className="text-3xl">🗺️</span>
                 Plateau de Jeu Interactif
             </h2>
 
-            <div className="relative w-full max-w-5xl mx-auto bg-slate-900 rounded-lg overflow-hidden shadow-2xl border border-slate-600">
+            <div className="relative w-full max-w-5xl mx-auto bg-surface-board rounded-lg overflow-hidden shadow-2xl border border-slate-600">
                 <img
                     src={mainBoard}
                     alt="Plateau de jeu Hegemony"
@@ -28,8 +28,8 @@ const InteractiveBoard = () => {
                         key={zone.id}
                         className={`absolute transition-all duration-200 border-2 
                             ${activeZone?.id === zone.id
-                                ? 'bg-amber-400/20 border-amber-400 shadow-[0_0_15px_rgba(251,191,36,0.5)]'
-                                : 'bg-transparent border-transparent hover:bg-white/10 hover:border-white/30'
+                                ? 'bg-amber-400 border-amber-400 shadow-[0_0_15px_rgba(251,191,36,0.5)] opacity-50'
+                                : 'bg-transparent border-transparent hover:bg-white/20 hover:border-white/40'
                             }`}
                         style={zone.style}
                         onMouseEnter={() => setActiveZone(zone)}
@@ -42,7 +42,7 @@ const InteractiveBoard = () => {
                 {/* Tooltip / Popover */}
                 {activeZone && (
                     <div
-                        className="absolute z-50 p-4 glass-effect text-slate-100 w-[90%] md:max-w-sm pointer-events-none transition-all duration-200"
+                        className="absolute z-50 p-4 bg-surface-tertiary border border-border text-slate-100 w-[90%] md:max-w-sm pointer-events-none transition-all duration-200 shadow-xl rounded-xl"
                         style={{
                             top: '50%',
                             left: '50%',

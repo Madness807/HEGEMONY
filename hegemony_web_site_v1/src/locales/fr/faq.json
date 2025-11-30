@@ -1,0 +1,149 @@
+{
+    "title": "Foire Aux Questions",
+    "subtitle": "Trouvez des réponses aux questions les plus fréquentes",
+    "searchPlaceholder": "Rechercher une question...",
+    "categories": {
+        "all": "Tout",
+        "rules": "Règles",
+        "cards": "Cartes"
+    },
+    "sections": {
+        "rules": "Questions sur les Règles",
+        "cards": "Questions sur les Cartes"
+    },
+    "noResults": "Aucun résultat trouvé pour",
+    "items": {
+        "rules": [
+            {
+                "q": "Si je n'ai pas assez d'argent pour payer quelque chose, suis-je obligé de faire un Emprunt ?",
+                "a": "OUI, mais seulement si le paiement est OBLIGATOIRE (Salaires, Impôts, Besoins, etc.). Vous ne pouvez pas faire d'Emprunt pour un achat volontaire (acheter une entreprise, une carte, etc.)."
+            },
+            {
+                "q": "Puis-je utiliser l'argent d'un Emprunt immédiatement ?",
+                "a": "OUI. L'argent (50) est ajouté à votre trésorerie et peut être utilisé pour payer la dette qui a forcé l'emprunt."
+            },
+            {
+                "q": "Que se passe-t-il si la pile de cartes Action est vide ?",
+                "a": "Mélangez la défausse pour former une nouvelle pioche."
+            },
+            {
+                "q": "Les entreprises publiques comptent-elles pour les objectifs de la Classe Capitaliste ?",
+                "a": "NON. Seules les entreprises appartenant aux joueurs Capitalistes comptent."
+            },
+            {
+                "q": "Puis-je négocier avec les autres joueurs ?",
+                "a": "OUI. Vous pouvez négocier tout ce qui n'est pas explicitement interdit. Vous pouvez échanger de l'argent, des promesses, des votes, etc. Les accords immédiats sont contraignants, les promesses futures ne le sont pas."
+            },
+            {
+                "q": "Les Travailleurs d'une Entreprise en Grève peuvent-ils être assignés ailleurs par la Classe Ouvrière ?",
+                "a": "Tant qu'ils ne sont pas sous contrat, la Classe Ouvrière peut les réassigner où elle souhaite."
+            },
+            {
+                "q": "Une Entreprise en Grève peut-elle être vendue ?",
+                "a": "Oui, tant que les Travailleurs qui s'y trouvent ne sont pas sous contrat."
+            },
+            {
+                "q": "Lorsque une Grève est résolue, que se passe-t-il s'il n'y a plus de Travailleurs dans une Entreprise avec un jeton de Grève ?",
+                "a": "Puisque l'Entreprise n'est plus opérationnelle, il ne se passe rien et le jeton de grève est simplement retiré. Notez que la Classe Ouvrière ne gagne pas d'Influence grâce à ce jeton."
+            },
+            {
+                "q": "Si une Entreprise de la Classe Moyenne qui a un poste pour un Travailleur de la Classe Ouvrière n'a plus de Travailleur de la Classe Moyenne parce qu'il a été assigné ailleurs, faut-il prendre ce poste en compte pour faire une Manifestation ?",
+                "a": "Non. Comme le Travailleur de la Classe Ouvrière ne peut être assigné à ce poste sans qu'un Travailleur de la Classe Moyenne ne dirige l'Entreprise, ce poste ne doit pas être pris en considération."
+            },
+            {
+                "q": "Si des Entreprises Publiques sont vendues suite à l'intervention du FMI, où vont les ressources excédentaires à la (nouvelle) limite de stockage ?",
+                "a": "Ces ressources sont immédiatement défaussées puisqu'elles ne peuvent plus être entreposées."
+            },
+            {
+                "q": "Si, lors d'une intervention du FMI, une Entreprise Publique avec des Travailleurs de la Classe Moyenne doit fermer, la Classe Moyenne en tient-elle compte lorsqu'elle paie ses Impôts ?",
+                "a": "L'Entreprise n'est plus sur le plateau et aucun Travailleur de la Classe Moyenne n'y est assigné au moment de Payer ses Impôts, la Classe Moyenne ne paie donc pas d'Impôts pour elle."
+            },
+            {
+                "q": "Que se passe-t-il si la Classe Moyenne ou la Classe Ouvrière gagne des points de Prospérité mais que celle-ci est déjà au maximum ?",
+                "a": "Le pion Prospérité n'est pas déplacé et le joueur gagne autant de PV qu'il a de points de Prospérité."
+            },
+            {
+                "q": "Si la Classe Capitaliste construit une Entreprise qui requiert uniquement des Travailleurs non qualifiés, mais que des Travailleurs non qualifiés de la Classe Ouvrière et des Travailleurs qualifiés de la Classe Moyenne sont disponibles, peut-elle choisir d'assigner ceux de la Classe Moyenne ?",
+                "a": "Oui. Puisque des Travailleurs des deux Classes sont disponibles, la Classe Capitaliste choisit la Classe qu'elle souhaite employer. Elle choisit ensuite les Travailleurs qu'elle souhaite, en priorisant les Travailleurs non qualifiés."
+            },
+            {
+                "q": "En assignant des Travailleurs, si j'en déplace un d'une Entreprise pour l'assigner ailleurs, et que j'en assigne un autre à sa place au cours de la même action, ce nouveau Travailleur est-il sous contrat ?",
+                "a": "Une Entreprise (autre que celles de la Classe Moyenne) ne peut pas avoir à la fois des Travailleurs sous contrat et d'autres qui ne le sont pas. Si cette situation devait arriver, tous les Travailleurs perdraient leur contrat. Ainsi, on procède comme pour l'action Muter des Travailleurs."
+            },
+            {
+                "q": "Puis-je effectuer l'action Assigner des Travailleurs pour simplement mettre sous contrat mes Travailleurs déjà assignés à une Entreprise ?",
+                "a": "Non. Ils doivent être assignés à une nouvelle Entreprise pour être sous contrat."
+            },
+            {
+                "q": "Si, dans une partie à 4 joueurs, des Entreprises Publiques doivent être vendues suite à un changement de Politique Fiscale, l'État peut-il vendre une Entreprise avec des Travailleurs sous contrat ?",
+                "a": "Oui, comme dans une partie à 2 ou 3 joueurs, lorsqu'une rangée entière d'Entreprises est vendue. Il s'agit du seul cas où une Entreprise avec des Travailleurs sous contrat peut être vendue."
+            }
+        ],
+        "cards": [
+            {
+                "q": "Carte 'Grève' : Puis-je jouer cette carte si je n'ai pas de travailleurs dans l'entreprise ?",
+                "a": "NON. Vous devez avoir au moins un travailleur (Moyenne ou Ouvrière) dans l'entreprise ciblée."
+            },
+            {
+                "q": "Carte 'Lobbying' : Puis-je utiliser l'influence achetée immédiatement ?",
+                "a": "OUI."
+            },
+            {
+                "q": "Carte 'Subvention' : L'État peut-il refuser de payer ?",
+                "a": "NON. Si la carte est jouée et valide, l'effet s'applique."
+            },
+            {
+                "q": "Privatisation : Cette carte peut-elle être utilisée pour vendre une Entreprise avec des Travailleurs sous contrat ?",
+                "a": "Oui. Même si l'Entreprise est « vendue », les Travailleurs y restent et recevront le Salaire convenu lors de leur assignation."
+            },
+            {
+                "q": "Privatisation : Si je joue cette carte et que je vends une Entreprise Publique à la Classe Capitaliste, cette dernière peut-elle la vendre plus tard ?",
+                "a": "Tant qu'il n'y a pas de Travailleur sous contrat dans l'Entreprise, elle peut être vendue normalement. La carte est alors remise face cachée dans le Secteur Public."
+            },
+            {
+                "q": "Sondage d'Opinion Publique : Les autres joueurs doivent-ils dire s'ils sont pour ou contre le Projet de loi avant que je ne décide s'il y aura un Vote Immédiat ?",
+                "a": "Non. Comme il n'y a pas encore de vote, les autres joueurs n'ont pas à dire s'ils sont pour ou contre la Proposition de Loi. Vous devez décider si vous souhaitez un Vote Immédiat, et ce n'est qu'à ce moment que les autres joueurs doivent se prononcer."
+            },
+            {
+                "q": "Changement d'Objectif : Que faire de la carte que je ne choisis pas ?",
+                "a": "L'autre carte est remise sur le dessus de la pile Événement."
+            },
+            {
+                "q": "Changement d'Objectif : Dois-je effectuer l'Action Événement que je viens de placer sur le plateau ?",
+                "a": "Non. S'il y a 2 Événements sur le plateau, vous pouvez effectuer l'Action Événement sur l'une ou l'autre."
+            },
+            {
+                "q": "Bourse d'État : La réduction concerne-t-elle chaque jeton Éducation acheté ou le total ?",
+                "a": "La réduction est appliquée au total."
+            },
+            {
+                "q": "Bourse d'État : Si Aides Sociales : Éducation est dans la section B, l'État gagne-t-il quand même 1 PV ?",
+                "a": "Oui, l'État gagne 1 PV quel que soit son coût final."
+            },
+            {
+                "q": "Démonstration de Force : Si je n'ai pas d'Influence Personnelle, puis-je acheter de l'Influence Médiatique auprès des Services Publics ?",
+                "a": "Non. L'Influence Personnelle et l'Influence Médiatique sont différentes. Votre Action Faire Campagne convertit l'une en l'autre, elle ne « l'achète » pas."
+            },
+            {
+                "q": "Accident du Travail : D'où vient l'argent que la Classe Capitaliste verse ?",
+                "a": "À chaque fois que la Classe Capitaliste dépense de l'argent, sauf indication contraire, c'est depuis le Chiffre d'Affaires. Si les fonds ne sont pas suffisants, la somme restante est prélevée sur le Capital."
+            },
+            {
+                "q": "Cartes Événement : Puis-je acheter plus de ressources que je ne peux en stocker (en les défaussant) pour gagner des PV ?",
+                "a": "Non. Vos possibilités d'achat sont limitées par vos Entrepôts disponibles."
+            },
+            {
+                "q": "Désobéissance Civile : Si je propose le Projet de Loi d'un autre joueur, ce dernier peut-il refuser ?",
+                "a": "Non. Vous choisissez un autre joueur et lui demandez quel Projet de Loi proposer. Ce joueur doit choisir une Politique s'il le peut. Vous proposez alors ce Projet de Loi, en utilisant votre propre marqueur. C'est aussi vous qui décidez si vous souhaitez un Vote Immédiat."
+            },
+            {
+                "q": "Industrie Naissante dans le Besoin : Qui décide de l'Entreprise à construire ?",
+                "a": "Vous (l'État) décidez quelle Entreprise construire parmi celles disponibles sur les Marchés des joueurs. Ensuite, toutes les décisions sont prises par le joueur qui possède la nouvelle Entreprise (par exemple, s'il y affectera des Travailleurs et lesquels)."
+            },
+            {
+                "q": "Représentativité Inégalitaire : Si l'État n'a pas d'Influence Personnelle, peut-il acheter de l'Influence Médiatique ?",
+                "a": "Non. L'Influence Personnelle et l'Influence Médiatique sont différentes. L'Action Faire Campagne de l'État convertit l'une en l'autre, elle ne « l'achète » pas."
+            }
+        ]
+    }
+}

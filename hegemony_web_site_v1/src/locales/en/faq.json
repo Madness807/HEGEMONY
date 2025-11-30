@@ -1,0 +1,149 @@
+{
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to the most frequent questions",
+    "searchPlaceholder": "Search for a question...",
+    "categories": {
+        "all": "All",
+        "rules": "Rules",
+        "cards": "Cards"
+    },
+    "sections": {
+        "rules": "Rules Questions",
+        "cards": "Cards Questions"
+    },
+    "noResults": "No results found for",
+    "items": {
+        "rules": [
+            {
+                "q": "If I don't have enough money to pay for something, do I have to take a Loan?",
+                "a": "YES, but only if the payment is MANDATORY (Wages, Taxes, Needs, etc.). You cannot take a Loan for a voluntary purchase (buying a company, a card, etc.)."
+            },
+            {
+                "q": "Can I use the money from a Loan immediately?",
+                "a": "YES. The money (50) is added to your treasury and can be used to pay the debt that forced the loan."
+            },
+            {
+                "q": "What happens if the Action card deck is empty?",
+                "a": "Shuffle the discard pile to form a new deck."
+            },
+            {
+                "q": "Do public companies count for the Capitalist Class objectives?",
+                "a": "NO. Only companies owned by Capitalist players count."
+            },
+            {
+                "q": "Can I negotiate with other players?",
+                "a": "YES. You can negotiate anything not explicitly forbidden. You can trade money, promises, votes, etc. Immediate agreements are binding, future promises are not."
+            },
+            {
+                "q": "Can Workers from a Company on Strike be assigned elsewhere by the Working Class?",
+                "a": "As long as they are not under contract, the Working Class can reassign them wherever they wish."
+            },
+            {
+                "q": "Can a Company on Strike be sold?",
+                "a": "Yes, as long as the Workers there are not under contract."
+            },
+            {
+                "q": "When a Strike is resolved, what happens if there are no more Workers in a Company with a Strike token?",
+                "a": "Since the Company is no longer operational, nothing happens and the strike token is simply removed. Note that the Working Class does not gain Influence from this token."
+            },
+            {
+                "q": "If a Middle Class Company has a spot for a Working Class Worker but no Middle Class Worker because they were assigned elsewhere, should this spot be counted for a Demonstration?",
+                "a": "No. Since the Working Class Worker cannot be assigned to this spot without a Middle Class Worker managing the Company, this spot should not be considered."
+            },
+            {
+                "q": "If Public Companies are sold following IMF intervention, where do excess resources go if they exceed the (new) storage limit?",
+                "a": "These resources are immediately discarded as they can no longer be stored."
+            },
+            {
+                "q": "If, during an IMF intervention, a Public Company with Middle Class Workers must close, does the Middle Class account for it when paying Taxes?",
+                "a": "The Company is no longer on the board and no Middle Class Worker is assigned to it at the time of Paying Taxes, so the Middle Class does not pay Taxes for it."
+            },
+            {
+                "q": "What happens if the Middle Class or Working Class gains Prosperity points but it is already at maximum?",
+                "a": "The Prosperity marker is not moved and the player gains as many VPs as they have Prosperity points."
+            },
+            {
+                "q": "If the Capitalist Class builds a Company requiring only unskilled Workers, but unskilled Working Class Workers and skilled Middle Class Workers are available, can they choose to assign Middle Class ones?",
+                "a": "Yes. Since Workers from both Classes are available, the Capitalist Class chooses which Class they wish to employ. They then choose which Workers they want, prioritizing unskilled Workers."
+            },
+            {
+                "q": "When assigning Workers, if I move one from a Company to assign it elsewhere, and assign another in its place during the same action, is this new Worker under contract?",
+                "a": "A Company (other than Middle Class ones) cannot have both Workers under contract and others who are not. If this situation were to occur, all Workers would lose their contract. Thus, proceed as for the Transfer Workers action."
+            },
+            {
+                "q": "Can I perform the Assign Workers action simply to put my Workers already assigned to a Company under contract?",
+                "a": "No. They must be assigned to a new Company to be under contract."
+            },
+            {
+                "q": "If, in a 4-player game, Public Companies must be sold following a Fiscal Policy change, can the State sell a Company with Workers under contract?",
+                "a": "Yes, as in a 2 or 3-player game, when an entire row of Companies is sold. This is the only case where a Company with Workers under contract can be sold."
+            }
+        ],
+        "cards": [
+            {
+                "q": "'Strike' Card: Can I play this card if I don't have workers in the company?",
+                "a": "NO. You must have at least one worker (Middle or Working) in the targeted company."
+            },
+            {
+                "q": "'Lobbying' Card: Can I use the purchased influence immediately?",
+                "a": "YES."
+            },
+            {
+                "q": "'Subsidy' Card: Can the State refuse to pay?",
+                "a": "NO. If the card is played and valid, the effect applies."
+            },
+            {
+                "q": "Privatization: Can this card be used to sell a Company with Workers under contract?",
+                "a": "Yes. Even if the Company is \"sold\", the Workers remain there and will receive the Wage agreed upon during their assignment."
+            },
+            {
+                "q": "Privatization: If I play this card and sell a Public Company to the Capitalist Class, can the latter sell it later?",
+                "a": "As long as there are no Workers under contract in the Company, it can be sold normally. The card is then returned face down to the Public Sector."
+            },
+            {
+                "q": "Public Opinion Poll: Do other players have to say if they are for or against the Bill before I decide if there will be an Immediate Vote?",
+                "a": "No. Since there is no vote yet, other players do not have to say if they are for or against the Bill. You must decide if you want an Immediate Vote, and only then do other players have to declare their position."
+            },
+            {
+                "q": "Change of Objective: What to do with the card I don't choose?",
+                "a": "The other card is placed on top of the Event deck."
+            },
+            {
+                "q": "Change of Objective: Do I have to perform the Event Action I just placed on the board?",
+                "a": "No. If there are 2 Events on the board, you can perform the Event Action on either one."
+            },
+            {
+                "q": "State Grant: Does the reduction apply to each Education token purchased or the total?",
+                "a": "The reduction is applied to the total."
+            },
+            {
+                "q": "State Grant: If Social Welfare: Education is in section B, does the State still gain 1 VP?",
+                "a": "Yes, the State gains 1 VP regardless of its final cost."
+            },
+            {
+                "q": "Show of Force: If I don't have Personal Influence, can I buy Media Influence from Public Services?",
+                "a": "No. Personal Influence and Media Influence are different. Your Campaign Action converts one into the other, it does not \"buy\" it."
+            },
+            {
+                "q": "Workplace Accident: Where does the money the Capitalist Class pays come from?",
+                "a": "Whenever the Capitalist Class spends money, unless stated otherwise, it is from Revenue. If funds are insufficient, the remaining amount is taken from Capital."
+            },
+            {
+                "q": "Event Cards: Can I buy more resources than I can store (discarding them) to gain VPs?",
+                "a": "No. Your purchasing possibilities are limited by your available Storage."
+            },
+            {
+                "q": "Civil Disobedience: If I propose another player's Bill, can they refuse?",
+                "a": "No. You choose another player and ask them which Bill to propose. This player must choose a Policy if they can. You then propose this Bill, using your own marker. You also decide if you want an Immediate Vote."
+            },
+            {
+                "q": "Infant Industry in Need: Who decides which Company to build?",
+                "a": "You (the State) decide which Company to build among those available on players' Markets. Then, all decisions are made by the player who owns the new Company (e.g., if they will assign Workers and which ones)."
+            },
+            {
+                "q": "Unequal Representation: If the State has no Personal Influence, can it buy Media Influence?",
+                "a": "No. Personal Influence and Media Influence are different. The State's Campaign Action converts one into the other, it does not \"buy\" it."
+            }
+        ]
+    }
+}

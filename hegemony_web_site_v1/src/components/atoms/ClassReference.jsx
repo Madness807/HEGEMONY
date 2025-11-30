@@ -29,9 +29,9 @@ const ClassReference = ({ type, label, size = 'h-6 w-6', showLabel = true }) => 
         if (derivedType === 'state') {
             return (
                 <span className="inline-flex items-center gap-2 font-medium">
-                    <div className={`${size} flex items-center justify-center rounded-full border border-gray-300 bg-white`}>
+                    <div className={`${size} flex items-center justify-center rounded-full border border-class-state/30 bg-class-state/10`}>
                         {/* Dynamic import or hardcoded icon for State */}
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-gray-600"><line x1="3" x2="21" y1="22" y2="22" /><line x1="6" x2="6" y1="18" y2="11" /><line x1="10" x2="10" y1="18" y2="11" /><line x1="14" x2="14" y1="18" y2="11" /><line x1="18" x2="18" y1="18" y2="11" /><polygon points="12 2 20 7 4 7" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-class-state"><line x1="3" x2="21" y1="22" y2="22" /><line x1="6" x2="6" y1="18" y2="11" /><line x1="10" x2="10" y1="18" y2="11" /><line x1="14" x2="14" y1="18" y2="11" /><line x1="18" x2="18" y1="18" y2="11" /><polygon points="12 2 20 7 4 7" /></svg>
                     </div>
                     {showLabel && <span>{displayText}</span>}
                 </span>

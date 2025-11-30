@@ -1,0 +1,23 @@
+{
+    "labels": {
+        "taxation": "Imposition",
+        "health": "Santé",
+        "education": "Éducation",
+        "population": "Population",
+        "pop": "Pop.",
+        "companies": "Ent.",
+        "revenue": "C.A.",
+        "incomeTax": "Impôt Revenu",
+        "incomeTaxShort": "Impôt Rev.",
+        "corporateTax": "Impôt Soc.",
+        "employerCost": "Ch. Pat.",
+        "totalToPay": "Total à Payer"
+    },
+    "aria": {
+        "workingPop": "Population de la Classe Ouvrière",
+        "middlePop": "Population de la Classe Moyenne",
+        "middleBiz": "Entreprises de la Classe Moyenne",
+        "capRevenue": "Revenu de la Classe Capitaliste",
+        "capBiz": "Entreprises de la Classe Capitaliste"
+    }
+}

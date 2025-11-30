@@ -1,93 +1,83 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { GameProvider, useGame } from './context/GameContext';
-import { useTaxCalculator } from './hooks/useTaxCalculator';
 import Header from './components/organisms/Header';
-import Sidebar from './components/organisms/Sidebar';
-import SetupGuideTab from './components/organisms/tabs/SetupGuideTab';
-import PoliciesTab from './components/organisms/tabs/PoliciesTab';
-import MaterialTab from './components/organisms/tabs/MaterialTab';
-import RulesTab from './components/organisms/tabs/RulesTab';
-import PhaseAssistantTab from './components/organisms/tabs/PhaseAssistantTab';
-import StateDashboardTab from './components/organisms/tabs/StateDashboardTab';
-import TaxCalculatorTab from './components/organisms/tabs/TaxCalculatorTab';
-import BoardTab from './components/organisms/tabs/BoardTab';
-import FAQTab from './components/organisms/tabs/FAQTab';
-import OtherRulesTab from './components/organisms/tabs/OtherRulesTab';
-import ShopTab from './components/organisms/tabs/ShopTab';
-import CreditsTab from './components/organisms/tabs/CreditsTab';
-import HomeTab from './components/organisms/tabs/HomeTab';
+import PoliciesModal from './components/organisms/PoliciesModal';
+import ErrorBoundary from './components/ErrorBoundary';
+import MainTemplate from './components/templates/MainTemplate';
+
+// Lazy load all page components to reduce initial bundle size
+const HomePage = React.lazy(() => import('./components/pages/HomePage'));
+const SetupGuidePage = React.lazy(() => import('./components/pages/SetupGuidePage'));
+const PoliciesPage = React.lazy(() => import('./components/pages/PoliciesPage'));
+const MaterialPage = React.lazy(() => import('./components/pages/MaterialPage'));
+const RulesPage = React.lazy(() => import('./components/pages/RulesPage'));
+const PhaseAssistantPage = React.lazy(() => import('./components/pages/PhaseAssistantPage'));
+const TaxCalculatorPage = React.lazy(() => import('./components/pages/TaxCalculatorPage'));
+const ShopPage = React.lazy(() => import('./components/pages/ShopPage'));
+const FAQPage = React.lazy(() => import('./components/pages/FAQPage'));
+const OtherRulesPage = React.lazy(() => import('./components/pages/OtherRulesPage'));
+const DesignSystemPage = React.lazy(() => import('./components/pages/DesignSystemPage'));
+
 
 const HegemonyContent = () => {
     const {
         activeTab,
-        setActiveTab,
         numPlayers,
-        setNumPlayers,
-        currentRound,
-        setCurrentRound,
-        currentPhase,
-        setCurrentPhase,
-        policies,
-        setPolicies,
-        players,
-        setPlayers
+        fiscalMultiplier,
+        taxes
     } = useGame();
 
-    const { fiscalMultiplier, taxes } = useTaxCalculator(policies, players);
-
     return (
-        <div className="min-h-screen p-4 md:p-8 font-sans text-foreground overflow-x-hidden">
-            <div className="max-w-7xl mx-auto space-y-8">
-                <Header numPlayers={numPlayers} currentRound={currentRound} />
-
-                <div className="flex flex-col lg:flex-row gap-8">
-                    <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
-
-                    <div className="flex-1 min-w-0">
-                        {activeTab === 'home' && <HomeTab />}
-                        {activeTab === 'setup-guide' && <SetupGuideTab numPlayers={numPlayers} />}
-
-                        {activeTab === 'policies' && (
-                            <PoliciesTab />
-                        )}
-
-                        {activeTab === 'material' && <MaterialTab />}
-
-                        {activeTab === 'rules' && <RulesTab />}
-
-                        {activeTab === 'phases' && (
-                            <PhaseAssistantTab />
-                        )}
-
-                        {activeTab === 'state-dashboard' && <StateDashboardTab />}
-
-                        {activeTab === 'taxes' && (
-                            <TaxCalculatorTab
-                                fiscalMultiplier={fiscalMultiplier}
-                                taxes={taxes}
-                            />
-                        )}
-
-                        {activeTab === 'board' && <BoardTab />}
-
-                        {activeTab === 'faq' && <FAQTab />}
-
-                        {activeTab === 'shop' && <ShopTab />}
-
-                        {activeTab === 'other-rules' && <OtherRulesTab />}
-
-                        {activeTab === 'credits' && <CreditsTab />}
+        <MainTemplate
+            header={<Header />}
+            modal={<PoliciesModal />}
+            isLoading={false} // Suspense handles loading, but we could pass state here
+        >
+            <Suspense fallback={
+                <div className="flex items-center justify-center min-h-[400px]">
+                    <div className="text-center">
+                        <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-primary border-r-transparent"></div>
+                        <p className="mt-4 text-muted-foreground">Chargement...</p>
                     </div>
                 </div>
-            </div>
-        </div>
+            }>
+                {activeTab === 'home' && <HomePage />}
+                {activeTab === 'setup-guide' && <SetupGuidePage numPlayers={numPlayers} />}
+
+                {activeTab === 'policies' && (
+                    <PoliciesPage />
+                )}
+
+                {activeTab === 'material' && <MaterialPage />}
+
+                {activeTab === 'rules' && <RulesPage />}
+
+                {activeTab === 'phases' && (
+                    <PhaseAssistantPage />
+                )}
+
+                {activeTab === 'taxes' && (
+                    <TaxCalculatorPage
+                        fiscalMultiplier={fiscalMultiplier}
+                        taxes={taxes}
+                    />
+                )}
+
+                {activeTab === 'other-rules' && <OtherRulesPage />}
+                {activeTab === 'shop' && <ShopPage />}
+                {activeTab === 'faq' && <FAQPage />}
+                {activeTab === 'design-system' && <DesignSystemPage />}
+            </Suspense>
+        </MainTemplate>
     );
 };
 
 const HegemonyAssistant = () => (
-    <GameProvider>
-        <HegemonyContent />
-    </GameProvider>
+    <ErrorBoundary>
+        <GameProvider>
+            <HegemonyContent />
+        </GameProvider>
+    </ErrorBoundary>
 );
 
 export default HegemonyAssistant;

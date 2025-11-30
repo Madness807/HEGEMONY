@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
+import { useTaxCalculator } from '../hooks/useTaxCalculator';
 
 const GameContext = createContext();
 
@@ -15,6 +16,7 @@ export const GameProvider = ({ children, initialPlayers = 4 }) => {
     const [numPlayers, setNumPlayers] = useState(initialPlayers);
     const [currentRound, setCurrentRound] = useState(1);
     const [currentPhase, setCurrentPhase] = useState(0);
+    const [isPoliciesModalOpen, setIsPoliciesModalOpen] = useState(false);
 
     const [policies, setPolicies] = useState({
         fiscal: 'C',
@@ -71,6 +73,25 @@ export const GameProvider = ({ children, initialPlayers = 4 }) => {
         }
     });
 
+    const { fiscalMultiplier, taxes } = useTaxCalculator(policies, players);
+
+    const updatePlayerStat = (className, statName, value) => {
+        setPlayers(prev => ({
+            ...prev,
+            [className]: {
+                ...prev[className],
+                [statName]: value
+            }
+        }));
+    };
+
+    const updatePolicy = (policyName, value) => {
+        setPolicies(prev => ({
+            ...prev,
+            [policyName]: value
+        }));
+    };
+
     const value = {
         activeTab,
         setActiveTab,
@@ -80,10 +101,16 @@ export const GameProvider = ({ children, initialPlayers = 4 }) => {
         setCurrentRound,
         currentPhase,
         setCurrentPhase,
+        isPoliciesModalOpen,
+        setIsPoliciesModalOpen,
         policies,
         setPolicies,
+        updatePolicy,
         players,
-        setPlayers
+        setPlayers,
+        updatePlayerStat,
+        fiscalMultiplier,
+        taxes
     };
 
     return (

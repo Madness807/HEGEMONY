@@ -12,7 +12,8 @@
         "fmi": "FMI",
         "rules": "Règles",
         "material": "Matériel",
-        "gallery": "Galerie",
+        "shop": "Boutique",
+        "faq": "FAQ",
         "credits": "Crédits"
     },
     "header": {

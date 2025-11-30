@@ -1,3 +1,11 @@
+import tokens from './src/components/ions/design-tokens.json';
+
+
+// Sanitize spacing to remove non-string values (like container object)
+const spacing = Object.fromEntries(
+    Object.entries(tokens.spacing).filter(([_, value]) => typeof value === 'string')
+);
+
 /** @type {import('tailwindcss').Config} */
 export default {
     darkMode: 'class',
@@ -8,57 +16,42 @@ export default {
     theme: {
         extend: {
             colors: {
-                border: "hsl(var(--border))",
-                input: "hsl(var(--input))",
-                ring: "hsl(var(--ring))",
-                background: "hsl(var(--background))",
-                foreground: "hsl(var(--foreground))",
-                primary: {
-                    DEFAULT: "hsl(var(--primary))",
-                    foreground: "hsl(var(--primary-foreground))",
+                ...tokens.colors,
+                surface: {
+                    primary: tokens.colors.surface.primary,
+                    secondary: tokens.colors.surface.secondary,
+                    tertiary: tokens.colors.surface.tertiary,
+                    board: tokens.colors.surface.board
                 },
-                secondary: {
-                    DEFAULT: "hsl(var(--secondary))",
-                    foreground: "hsl(var(--secondary-foreground))",
-                },
-                destructive: {
-                    DEFAULT: "hsl(var(--destructive))",
-                    foreground: "hsl(var(--destructive-foreground))",
-                },
-                muted: {
-                    DEFAULT: "hsl(var(--muted))",
-                    foreground: "hsl(var(--muted-foreground))",
-                },
-                accent: {
-                    DEFAULT: "hsl(var(--accent))",
-                    foreground: "hsl(var(--accent-foreground))",
-                },
-                popover: {
-                    DEFAULT: "hsl(var(--popover))",
-                    foreground: "hsl(var(--popover-foreground))",
-                },
-                card: {
-                    DEFAULT: "hsl(var(--card))",
-                    foreground: "hsl(var(--card-foreground))",
-                },
-                // Game Class Colors
-                "class-working": "hsl(var(--class-working))",
-                "class-middle": "hsl(var(--class-middle))",
-                "class-capitalist": "hsl(var(--class-capitalist))",
-                "class-state": "hsl(var(--class-state))",
-                "gold": "hsl(var(--gold))",
-                "gold-dim": "hsl(var(--gold-dim))",
+                // Aliases for cleaner usage
+                class: tokens.colors.classes,
+                policy: tokens.colors.policies,
             },
-            fontFamily: {
-                sans: ['Inter', 'sans-serif'],
-                serif: ['Playfair Display', 'serif'],
-                prata: ['Prata', 'serif'],
+            fontFamily: tokens.typography.fontFamily,
+            fontSize: tokens.typography.fontSize,
+            fontWeight: tokens.typography.fontWeight,
+            lineHeight: tokens.typography.lineHeight,
+            letterSpacing: tokens.typography.letterSpacing,
+            spacing: spacing,
+            width: tokens.sizing.width,
+            height: tokens.sizing.height,
+            borderRadius: tokens.borderRadius,
+            boxShadow: {
+                glass: "0 4px 16px rgba(0, 0, 0, 0.3)",
+                ...Object.fromEntries(
+                    Object.entries(tokens.shadows).filter(([_, value]) => typeof value === 'string')
+                ),
+                // Flatten elevation shadows
+                ...Object.fromEntries(
+                    Object.entries(tokens.shadows.elevation || {}).map(([key, value]) => [`elevation-${key}`, value])
+                )
             },
-            borderRadius: {
-                lg: 'var(--radius)',
-                md: 'calc(var(--radius) - 2px)',
-                sm: 'calc(var(--radius) - 4px)'
-            },
+            opacity: tokens.opacity,
+            zIndex: tokens.zIndex,
+            transitionDuration: tokens.transitions.duration,
+            transitionTimingFunction: tokens.transitions.ease,
+
+            // Keep existing keyframes
             keyframes: {
                 "accordion-down": {
                     from: { height: 0 },

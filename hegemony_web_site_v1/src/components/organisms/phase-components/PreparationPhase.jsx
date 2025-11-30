@@ -1,16 +1,26 @@
 import React from 'react';
-import { BookOpen, CheckCircle } from 'lucide-react';
+import { BookOpen, ChevronRight } from 'lucide-react';
+import AccordionSection from '../../molecules/AccordionSection';
 import CheckItem from '../../molecules/CheckItem';
 import ClassReference from '../../atoms/ClassReference';
+import SetupGuidePage from '../../pages/SetupGuidePage';
+import PhaseHeader from '../../molecules/PhaseHeader';
 
-const PreparationPhase = ({ round, numPlayers }) => (
-    <div className="space-y-6">
-        <h4 className="text-2xl font-bold text-blue-300 flex items-center gap-2">
-            <BookOpen className="w-6 h-6" />
-            Phase de Préparation
-        </h4>
-        {round > 1 && (
-            <div className="space-y-6">
+const PreparationPhase = ({ round, numPlayers }) => {
+    if (round === 1) {
+        return <SetupGuidePage />;
+    }
+
+    return (
+        <div className="space-y-6">
+            <PhaseHeader
+                title="Aperçu de la Phase"
+                subtitle="Ordre du tour :"
+                icon={BookOpen}
+                color="blue"
+            />
+
+            <div className="space-y-4">
                 <CheckItem>Tous : Payer 5Ꝟ d'intérêts par Emprunt</CheckItem>
                 <CheckItem><ClassReference type="working" /> : Réduire Prospérité de 1</CheckItem>
                 {numPlayers >= 3 && <CheckItem><ClassReference type="middle" /> : Réduire Prospérité de 2</CheckItem>}
@@ -28,14 +38,8 @@ const PreparationPhase = ({ round, numPlayers }) => (
                     </>
                 )}
             </div>
-        )}
-        {round === 1 && (
-            <div className="glass-inner p-6 flex items-center gap-4 border-l-4 border-l-green-500">
-                <CheckCircle className="w-8 h-8 text-green-500" />
-                <p className="text-green-200 font-bold text-lg">Première manche : Passez directement à la Phase d'Action !</p>
-            </div>
-        )}
-    </div>
-);
+        </div>
+    );
+};
 
 export default PreparationPhase;

@@ -1,0 +1,23 @@
+{
+    "labels": {
+        "taxation": "Taxation",
+        "health": "Health",
+        "education": "Education",
+        "population": "Population",
+        "pop": "Pop.",
+        "companies": "Comp.",
+        "revenue": "Rev.",
+        "incomeTax": "Income Tax",
+        "incomeTaxShort": "Inc. Tax",
+        "corporateTax": "Corp. Tax",
+        "employerCost": "Emp. Cost",
+        "totalToPay": "Total to Pay"
+    },
+    "aria": {
+        "workingPop": "Working Class Population",
+        "middlePop": "Middle Class Population",
+        "middleBiz": "Middle Class Companies",
+        "capRevenue": "Capitalist Class Revenue",
+        "capBiz": "Capitalist Class Companies"
+    }
+}

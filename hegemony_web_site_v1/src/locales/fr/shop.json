@@ -1,0 +1,29 @@
+{
+    "title": "Boutique Officielle",
+    "subtitle": "Soutenez le projet Hegemony et découvrez tous les produits officiels.",
+    "categories": {
+        "games": {
+            "title": "Jeux & Extensions",
+            "desc": "Commandez le jeu de base et ses extensions."
+        },
+        "accessories": {
+            "title": "Accessoires",
+            "desc": "Sleeves, pièces en métal et autres goodies."
+        },
+        "support": {
+            "title": "Soutien",
+            "desc": "Aidez les créateurs à développer l'univers."
+        }
+    },
+    "expansions": {
+        "title": "Extensions Disponibles",
+        "crisis": "Crisis & Control",
+        "historical": "Historical Events",
+        "shadows": "Shadows of Authority"
+    },
+    "buttons": {
+        "visit": "Visiter la Boutique Officielle",
+        "kickstarter": "Voir le Kickstarter"
+    },
+    "disclaimer": "Les liens s'ouvriront dans un nouvel onglet"
+}
