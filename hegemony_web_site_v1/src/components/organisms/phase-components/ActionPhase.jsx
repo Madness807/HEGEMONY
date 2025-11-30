@@ -9,23 +9,23 @@ const ActionPhase = ({ numPlayers }) => (
             Phase d'Action
         </h4>
         <p className="text-slate-400 font-medium">5 tours par joueur dans l'ordre suivant :</p>
-        <div className="space-y-4 pl-4">
-            <div className="flex items-center gap-4 p-3 glass-inner hover:bg-white/5 transition-colors">
+        <div className="space-y-6 pl-4">
+            <div className="flex items-center gap-4 p-5 glass-inner hover:bg-white/5 transition-colors">
                 <div className="w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center font-black text-xl shadow-lg">1</div>
                 <span className="font-bold text-lg text-slate-300"><ClassReference type="working" /></span>
             </div>
             {numPlayers >= 3 && (
-                <div className="flex items-center gap-4 p-3 glass-inner hover:bg-white/5 transition-colors">
+                <div className="flex items-center gap-4 p-5 glass-inner hover:bg-white/5 transition-colors">
                     <div className="w-10 h-10 bg-yellow-600 text-white rounded-full flex items-center justify-center font-black text-xl shadow-lg">2</div>
                     <span className="font-bold text-lg text-slate-300"><ClassReference type="middle" /></span>
                 </div>
             )}
-            <div className="flex items-center gap-4 p-3 glass-inner hover:bg-white/5 transition-colors">
+            <div className="flex items-center gap-4 p-5 glass-inner hover:bg-white/5 transition-colors">
                 <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-black text-xl shadow-lg">{numPlayers >= 3 ? 3 : 2}</div>
                 <span className="font-bold text-lg text-slate-300"><ClassReference type="capitalist" /></span>
             </div>
             {numPlayers === 4 && (
-                <div className="flex items-center gap-4 p-3 glass-inner hover:bg-white/5 transition-colors">
+                <div className="flex items-center gap-4 p-5 glass-inner hover:bg-white/5 transition-colors">
                     <div className="w-10 h-10 bg-gray-600 text-white rounded-full flex items-center justify-center font-black text-xl shadow-lg">4</div>
                     <span className="font-bold text-lg text-slate-300"><ClassReference type="state" /></span>
                 </div>

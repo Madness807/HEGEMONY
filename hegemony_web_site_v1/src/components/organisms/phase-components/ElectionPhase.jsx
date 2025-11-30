@@ -10,8 +10,8 @@ const ElectionPhase = ({ numPlayers }) => (
             <Users className="w-6 h-6" />
             Phase d'Élections
         </h4>
-        <div className="space-y-4">
-            <GlassCard className="p-6 rounded-xl border-l-4 border-purple-500">
+        <div className="space-y-6">
+            <GlassCard className="p-8 rounded-xl border-l-4 border-purple-500">
                 <h5 className="font-bold mb-3 text-lg text-white">1. Remplir le Sac</h5>
                 <ul className="space-y-2">
                     <CheckItem><ClassReference type="working" /> : ½ Population</CheckItem>
@@ -20,7 +20,7 @@ const ElectionPhase = ({ numPlayers }) => (
                     {numPlayers === 4 && <CheckItem><ClassReference type="state" /> : Influence selon légitimité</CheckItem>}
                 </ul>
             </GlassCard>
-            <GlassCard className="p-6 rounded-xl border-l-4 border-purple-700">
+            <GlassCard className="p-8 rounded-xl border-l-4 border-purple-700">
                 <h5 className="font-bold mb-3 text-lg text-white">2. Organiser les Élections</h5>
                 <ul className="space-y-2">
                     <CheckItem>Pour chaque Projet de Loi</CheckItem>

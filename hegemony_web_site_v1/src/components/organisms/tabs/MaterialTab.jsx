@@ -70,7 +70,9 @@ const MaterialTab = () => {
         middle: false,
         capitalist: false,
         state: false,
-        general: false
+        state: false,
+        general: false,
+        cardSheets: true
     });
 
     const {
@@ -81,6 +83,8 @@ const MaterialTab = () => {
         food1, food3, food5, luxe1, luxe3, luxe5, health1, health3, health5, education1, education3, education5,
         exportCards, immigrationCards, politicalAgendas
     } = ASSETS.local;
+
+    const { working: workingWorkers, middle: middleWorkers, workingFarm } = ASSETS.workers;
 
     const toggle = (section) => {
         setExpanded(prev => ({ ...prev, [section]: !prev[section] }));
@@ -110,10 +114,6 @@ const MaterialTab = () => {
                                         <SafeImage src={pawnWorker} alt="Pion Ouvrière" className="w-12 h-12 rounded-full border-2 border-red-500" />
                                         <span className="text-red-400 font-bold">Pion Ouvrier</span>
                                     </div>
-                                    <div className="flex items-center gap-2">
-                                        <SafeImage src={legitimacyWorker} alt="Légitimité Ouvrier" className="w-12 h-12 rounded-full shadow-lg" />
-                                        <span className="text-red-400 font-bold">Légitimité</span>
-                                    </div>
                                 </div>
                             </div>
                             <div className="space-y-4 mt-4">
@@ -133,13 +133,47 @@ const MaterialTab = () => {
                         </div>
 
                         <div className="space-y-4">
+                            <h4 className="text-xl font-bold text-white">Types de Travailleurs</h4>
+                            <div className="grid grid-cols-3 gap-2">
+                                <div className="flex flex-col items-center gap-1">
+                                    <SafeImage src={workingWorkers.unskilledFemale} alt="Ouvrier Non Qualifié" className="w-full rounded shadow-sm" />
+                                    <span className="text-xs text-red-300 text-center">Non Qualifié</span>
+                                </div>
+                                <div className="flex flex-col items-center gap-1">
+                                    <SafeImage src={workingWorkers.educationFemale} alt="Ouvrier Éducation" className="w-full rounded shadow-sm" />
+                                    <span className="text-xs text-red-300 text-center">Éducation</span>
+                                </div>
+                                <div className="flex flex-col items-center gap-1">
+                                    <SafeImage src={workingWorkers.healthMale} alt="Ouvrier Santé" className="w-full rounded shadow-sm" />
+                                    <span className="text-xs text-red-300 text-center">Santé</span>
+                                </div>
+                                <div className="flex flex-col items-center gap-1">
+                                    <SafeImage src={workingWorkers.luxuryFemale} alt="Ouvrier Luxe" className="w-full rounded shadow-sm" />
+                                    <span className="text-xs text-red-300 text-center">Luxe</span>
+                                </div>
+                                <div className="flex flex-col items-center gap-1">
+                                    <SafeImage src={workingWorkers.mediaMale} alt="Ouvrier Média" className="w-full rounded shadow-sm" />
+                                    <span className="text-xs text-red-300 text-center">Média</span>
+                                </div>
+                                <div className="flex flex-col items-center gap-1">
+                                    <SafeImage src={workingFarm.farmMale} alt="Ouvrier Agricole (H)" className="w-full rounded shadow-sm" />
+                                    <span className="text-xs text-red-300 text-center">Agricole (H)</span>
+                                </div>
+                                <div className="flex flex-col items-center gap-1">
+                                    <SafeImage src={workingFarm.farmFemaleAlt} alt="Ouvrier Agricole (Alt)" className="w-full rounded shadow-sm" />
+                                    <span className="text-xs text-red-300 text-center">Agricole (Alt)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="space-y-4">
                             <h4 className="text-xl font-bold text-white">Actions & Jetons</h4>
                             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                                 {[workAction1, workAction2, workAction3, workAction4, workAction5, workAction6, workAction7].map((card, i) => (
                                     <SafeImage key={`work-${i}`} src={card} alt={`Action Ouvrière ${i + 1}`} className="w-full rounded-lg shadow-lg hover:scale-110 transition-transform duration-200" />
                                 ))}
                             </div>
-                            <div className="flex gap-4 mt-4">
+                            <div className="grid grid-cols-2 gap-4 mt-4">
                                 <div className="flex flex-col items-center gap-2">
                                     <SafeImage src={strike} alt="Grève" className="w-16 h-auto rounded-full shadow-lg" />
                                     <span className="text-red-400 font-bold text-xs">Grève (x7)</span>
@@ -147,6 +181,21 @@ const MaterialTab = () => {
                                 <div className="flex flex-col items-center gap-2">
                                     <SafeImage src={demonstration} alt="Manifestation" className="w-16 h-auto rounded-full shadow-lg" />
                                     <span className="text-red-400 font-bold text-xs">Manifestation (x1)</span>
+                                </div>
+                            </div>
+
+                            {/* Votes Ouvriers */}
+                            <div className="mt-4">
+                                <h5 className="text-lg font-bold text-red-300 mb-2">🗳️ Votes Ouvriers</h5>
+                                <div className="flex gap-4 justify-center">
+                                    <div className="flex flex-col items-center gap-2">
+                                        <SafeImage src={ASSETS.votes.workerYes} alt="Vote Oui Ouvrier" className="w-16 h-auto object-contain shadow-lg" />
+                                        <span className="text-red-400 font-bold text-xs">Oui</span>
+                                    </div>
+                                    <div className="flex flex-col items-center gap-2">
+                                        <SafeImage src={ASSETS.votes.workerNo} alt="Vote Non Ouvrier" className="w-16 h-auto object-contain shadow-lg" />
+                                        <span className="text-red-400 font-bold text-xs">Non</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -174,10 +223,6 @@ const MaterialTab = () => {
                                         <SafeImage src={pawnMiddle} alt="Pion Moyenne" className="w-12 h-12 rounded-full border-2 border-yellow-500" />
                                         <span className="text-yellow-400 font-bold">Pion Moyenne</span>
                                     </div>
-                                    <div className="flex items-center gap-2">
-                                        <SafeImage src={legitimacyMiddle} alt="Légitimité Moyenne" className="w-12 h-12 rounded-full shadow-lg" />
-                                        <span className="text-yellow-400 font-bold">Légitimité</span>
-                                    </div>
                                 </div>
                             </div>
                             <div className="space-y-4 mt-4">
@@ -194,6 +239,36 @@ const MaterialTab = () => {
                                 <Item name="Cartes Action" count="40 cartes" color="yellow" />
                                 <Item name="Entreprises" count="17 cartes" color="yellow" />
                                 <Item name="Travailleurs" count="42 meeples" color="yellow" />
+                            </div>
+                        </div>
+
+                        <div className="space-y-4">
+                            <h4 className="text-xl font-bold text-white">Types de Travailleurs</h4>
+                            <div className="grid grid-cols-3 gap-2">
+                                <div className="flex flex-col items-center gap-1">
+                                    <SafeImage src={middleWorkers.unskilledMale} alt="Moyen Non Qualifié" className="w-full rounded shadow-sm" />
+                                    <span className="text-xs text-yellow-300 text-center">Non Qualifié</span>
+                                </div>
+                                <div className="flex flex-col items-center gap-1">
+                                    <SafeImage src={middleWorkers.educationGeneric} alt="Moyen Éducation" className="w-full rounded shadow-sm" />
+                                    <span className="text-xs text-yellow-300 text-center">Éducation</span>
+                                </div>
+                                <div className="flex flex-col items-center gap-1">
+                                    <SafeImage src={middleWorkers.healthFemale} alt="Moyen Santé" className="w-full rounded shadow-sm" />
+                                    <span className="text-xs text-yellow-300 text-center">Santé</span>
+                                </div>
+                                <div className="flex flex-col items-center gap-1">
+                                    <SafeImage src={middleWorkers.luxuryFemale} alt="Moyen Luxe" className="w-full rounded shadow-sm" />
+                                    <span className="text-xs text-yellow-300 text-center">Luxe</span>
+                                </div>
+                                <div className="flex flex-col items-center gap-1">
+                                    <SafeImage src={middleWorkers.mediaMale} alt="Moyen Média" className="w-full rounded shadow-sm" />
+                                    <span className="text-xs text-yellow-300 text-center">Média</span>
+                                </div>
+                                <div className="flex flex-col items-center gap-1">
+                                    <SafeImage src={middleWorkers.farmFemale} alt="Moyen Agricole" className="w-full rounded shadow-sm" />
+                                    <span className="text-xs text-yellow-300 text-center">Agricole</span>
+                                </div>
                             </div>
                         </div>
 
@@ -228,10 +303,6 @@ const MaterialTab = () => {
                                     <div className="flex items-center gap-2">
                                         <SafeImage src={pawnCapitalist} alt="Pion Capitaliste" className="w-12 h-12 rounded-full border-2 border-blue-500" />
                                         <span className="text-blue-400 font-bold">Pion Capitaliste</span>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <SafeImage src={legitimacyCapitalist} alt="Légitimité Capitaliste" className="w-12 h-12 rounded-full shadow-lg" />
-                                        <span className="text-blue-400 font-bold">Légitimité</span>
                                     </div>
                                 </div>
                             </div>
@@ -299,8 +370,43 @@ const MaterialTab = () => {
                             </div>
                         </div>
                     </div>
+
+                    {/* Jetons de Légitimité */}
+                    <div className="mt-6">
+                        <h4 className="text-xl font-bold text-white mb-4">⚖️ Jetons de Légitimité</h4>
+                        <div className="grid grid-cols-3 gap-4">
+                            <div className="flex flex-col items-center gap-2 glass-effect p-4 rounded-lg">
+                                <SafeImage src={ASSETS.legitimacy.worker} alt="Légitimité Ouvrière" className="w-auto h-20 max-w-32 object-contain" />
+                                <span className="text-red-400 font-bold text-sm">Classe Ouvrière</span>
+                            </div>
+                            <div className="flex flex-col items-center gap-2 glass-effect p-4 rounded-lg">
+                                <SafeImage src={ASSETS.legitimacy.middle} alt="Légitimité Moyenne" className="w-auto h-20 max-w-32 object-contain" />
+                                <span className="text-yellow-400 font-bold text-sm">Classe Moyenne</span>
+                            </div>
+                            <div className="flex flex-col items-center gap-2 glass-effect p-4 rounded-lg">
+                                <SafeImage src={ASSETS.legitimacy.capitalist} alt="Légitimité Capitaliste" className="w-auto h-20 max-w-32 object-contain" />
+                                <span className="text-blue-400 font-bold text-sm">Classe Capitaliste</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Jetons de Vote */}
+                    <div className="mt-6">
+                        <h4 className="text-xl font-bold text-white mb-4">🗳️ Jetons de Vote État</h4>
+                        <div className="flex gap-4 justify-center glass-effect p-4 rounded-lg max-w-xs mx-auto">
+                            <div className="flex flex-col items-center gap-2">
+                                <SafeImage src={ASSETS.votes.yes} alt="Vote Oui" className="w-16 h-auto object-contain shadow-lg" />
+                                <span className="text-slate-400 font-bold text-sm">Oui</span>
+                            </div>
+                            <div className="flex flex-col items-center gap-2">
+                                <SafeImage src={ASSETS.votes.no} alt="Vote Non" className="w-16 h-auto object-contain shadow-lg" />
+                                <span className="text-slate-400 font-bold text-sm">Non</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </Section>
+
 
             {/* MATÉRIEL GÉNÉRAL */}
             <Section
@@ -315,93 +421,122 @@ const MaterialTab = () => {
                     {/* Ressources */}
                     <div>
                         <h4 className="text-xl font-bold text-white mb-4">Ressources & Monnaie</h4>
-                        <div className="grid grid-cols-1 gap-6">
-                            <div className="space-y-2">
-                                <h5 className="text-green-400 font-bold flex items-center gap-2">
+
+                        {/* Ressources Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                            {/* Nourriture */}
+                            <div className="glass-effect p-4 rounded-lg">
+                                <h5 className="text-green-400 font-bold flex items-center gap-2 mb-3">
                                     <span>🌾 Nourriture</span>
                                 </h5>
                                 <div className="grid grid-cols-3 gap-4">
-                                    {[
-                                        { img: ASSETS.local.food1, val: '1' },
-                                        { img: ASSETS.local.food3, val: '3' },
-                                        { img: ASSETS.local.food5, val: '5' }
-                                    ].map((item) => (
-                                        <div key={`food-${item.val}`} className="flex flex-col items-center gap-2">
-                                            <SafeImage src={item.img} alt={`Nourriture ${item.val}`} className="w-24 h-auto rounded-lg shadow-lg hover:scale-105 transition-transform" />
-                                            <span className="text-green-400 font-bold">x{item.val}</span>
-                                        </div>
-                                    ))}
+                                    <div className="flex flex-col items-center gap-2">
+                                        <SafeImage src={ASSETS.local.food1} alt="Nourriture 1" className="w-20 h-auto object-contain rounded-lg shadow-lg" />
+                                        <span className="text-green-400 font-bold text-sm">x1</span>
+                                    </div>
+                                    <div className="flex flex-col items-center gap-2">
+                                        <SafeImage src={ASSETS.local.food3} alt="Nourriture 3" className="w-20 h-auto object-contain rounded-lg shadow-lg" />
+                                        <span className="text-green-400 font-bold text-sm">x3</span>
+                                    </div>
+                                    <div className="flex flex-col items-center gap-2">
+                                        <SafeImage src={ASSETS.local.food5} alt="Nourriture 5" className="w-20 h-auto object-contain rounded-lg shadow-lg" />
+                                        <span className="text-green-400 font-bold text-sm">x5</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="space-y-2">
-                                <h5 className="text-blue-400 font-bold flex items-center gap-2">
+
+                            {/* Luxe */}
+                            <div className="glass-effect p-4 rounded-lg">
+                                <h5 className="text-blue-400 font-bold flex items-center gap-2 mb-3">
                                     <span>📱 Luxe</span>
                                 </h5>
                                 <div className="grid grid-cols-3 gap-4">
-                                    {[
-                                        { img: ASSETS.local.luxe1, val: '1' },
-                                        { img: ASSETS.local.luxe3, val: '3' },
-                                        { img: ASSETS.local.luxe5, val: '5' }
-                                    ].map((item) => (
-                                        <div key={`luxe-${item.val}`} className="flex flex-col items-center gap-2">
-                                            <SafeImage src={item.img} alt={`Luxe ${item.val}`} className="w-24 h-auto rounded-lg shadow-lg hover:scale-105 transition-transform" />
-                                            <span className="text-blue-400 font-bold">x{item.val}</span>
-                                        </div>
-                                    ))}
+                                    <div className="flex flex-col items-center gap-2">
+                                        <SafeImage src={ASSETS.local.luxe1} alt="Luxe 1" className="w-20 h-auto object-contain rounded-lg shadow-lg" />
+                                        <span className="text-blue-400 font-bold text-sm">x1</span>
+                                    </div>
+                                    <div className="flex flex-col items-center gap-2">
+                                        <SafeImage src={ASSETS.local.luxe3} alt="Luxe 3" className="w-20 h-auto object-contain rounded-lg shadow-lg" />
+                                        <span className="text-blue-400 font-bold text-sm">x3</span>
+                                    </div>
+                                    <div className="flex flex-col items-center gap-2">
+                                        <SafeImage src={ASSETS.local.luxe5} alt="Luxe 5" className="w-20 h-auto object-contain rounded-lg shadow-lg" />
+                                        <span className="text-blue-400 font-bold text-sm">x5</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="space-y-2">
-                                <h5 className="text-red-400 font-bold flex items-center gap-2">
+
+                            {/* Santé */}
+                            <div className="glass-effect p-4 rounded-lg">
+                                <h5 className="text-red-400 font-bold flex items-center gap-2 mb-3">
                                     <span>❤️ Santé</span>
                                 </h5>
                                 <div className="grid grid-cols-3 gap-4">
-                                    {[
-                                        { img: ASSETS.local.health1, val: '1' },
-                                        { img: ASSETS.local.health3, val: '3' },
-                                        { img: ASSETS.local.health5, val: '5' }
-                                    ].map((item) => (
-                                        <div key={`health-${item.val}`} className="flex flex-col items-center gap-2">
-                                            <SafeImage src={item.img} alt={`Santé ${item.val}`} className="w-24 h-auto rounded-lg shadow-lg hover:scale-105 transition-transform" />
-                                            <span className="text-red-400 font-bold">x{item.val}</span>
-                                        </div>
-                                    ))}
+                                    <div className="flex flex-col items-center gap-2">
+                                        <SafeImage src={ASSETS.local.health1} alt="Santé 1" className="w-20 h-auto object-contain rounded-lg shadow-lg" />
+                                        <span className="text-red-400 font-bold text-sm">x1</span>
+                                    </div>
+                                    <div className="flex flex-col items-center gap-2">
+                                        <SafeImage src={ASSETS.local.health3} alt="Santé 3" className="w-20 h-auto object-contain rounded-lg shadow-lg" />
+                                        <span className="text-red-400 font-bold text-sm">x3</span>
+                                    </div>
+                                    <div className="flex flex-col items-center gap-2">
+                                        <SafeImage src={ASSETS.local.health5} alt="Santé 5" className="w-20 h-auto object-contain rounded-lg shadow-lg" />
+                                        <span className="text-red-400 font-bold text-sm">x5</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="space-y-2">
-                                <h5 className="text-yellow-400 font-bold flex items-center gap-2">
+
+                            {/* Éducation */}
+                            <div className="glass-effect p-4 rounded-lg">
+                                <h5 className="text-yellow-400 font-bold flex items-center gap-2 mb-3">
                                     <span>🎓 Éducation</span>
                                 </h5>
                                 <div className="grid grid-cols-3 gap-4">
-                                    {[
-                                        { img: ASSETS.local.education1, val: '1' },
-                                        { img: ASSETS.local.education3, val: '3' },
-                                        { img: ASSETS.local.education5, val: '5' }
-                                    ].map((item) => (
-                                        <div key={`edu-${item.val}`} className="flex flex-col items-center gap-2">
-                                            <SafeImage src={item.img} alt={`Éducation ${item.val}`} className="w-24 h-auto rounded-lg shadow-lg hover:scale-105 transition-transform" />
-                                            <span className="text-yellow-400 font-bold">x{item.val}</span>
-                                        </div>
-                                    ))}
+                                    <div className="flex flex-col items-center gap-2">
+                                        <SafeImage src={ASSETS.local.education1} alt="Éducation 1" className="w-20 h-auto object-contain rounded-lg shadow-lg" />
+                                        <span className="text-yellow-400 font-bold text-sm">x1</span>
+                                    </div>
+                                    <div className="flex flex-col items-center gap-2">
+                                        <SafeImage src={ASSETS.local.education3} alt="Éducation 3" className="w-20 h-auto object-contain rounded-lg shadow-lg" />
+                                        <span className="text-yellow-400 font-bold text-sm">x3</span>
+                                    </div>
+                                    <div className="flex flex-col items-center gap-2">
+                                        <SafeImage src={ASSETS.local.education5} alt="Éducation 5" className="w-20 h-auto object-contain rounded-lg shadow-lg" />
+                                        <span className="text-yellow-400 font-bold text-sm">x5</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="mt-6">
-                            <h5 className="text-green-400 font-bold mb-2">💵 Billets</h5>
-                            <div className="grid grid-cols-3 sm:grid-cols-6 gap-4">
-                                {[
-                                    { img: ASSETS.tokens[1], val: '1' },
-                                    { img: ASSETS.tokens[5], val: '5' },
-                                    { img: ASSETS.tokens[10], val: '10' },
-                                    { img: ASSETS.tokens[20], val: '20' },
-                                    { img: ASSETS.tokens[50], val: '50' },
-                                    { img: ASSETS.tokens[100], val: '100' }
-                                ].map((item) => (
-                                    <div key={`token-${item.val}`} className="flex flex-col items-center gap-2">
-                                        <SafeImage src={item.img} alt={`Billet ${item.val}`} className="w-full h-auto rounded shadow-md hover:scale-105 transition-transform" />
-                                        <span className="text-green-300 font-bold">{item.val}</span>
-                                    </div>
-                                ))}
+                        {/* Billets / Monnaie */}
+                        <div className="glass-effect p-6 rounded-lg">
+                            <h5 className="text-green-400 font-bold mb-4 text-lg">💵 Billets</h5>
+                            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+                                <div className="flex flex-col items-center gap-2">
+                                    <SafeImage src={ASSETS.tokens[1]} alt="Billet 1" className="w-full h-auto object-contain rounded shadow-md" />
+                                    <span className="text-green-300 font-bold">1</span>
+                                </div>
+                                <div className="flex flex-col items-center gap-2">
+                                    <SafeImage src={ASSETS.tokens[5]} alt="Billet 5" className="w-full h-auto object-contain rounded shadow-md" />
+                                    <span className="text-green-300 font-bold">5</span>
+                                </div>
+                                <div className="flex flex-col items-center gap-2">
+                                    <SafeImage src={ASSETS.tokens[10]} alt="Billet 10" className="w-full h-auto object-contain rounded shadow-md" />
+                                    <span className="text-green-300 font-bold">10</span>
+                                </div>
+                                <div className="flex flex-col items-center gap-2">
+                                    <SafeImage src={ASSETS.tokens[20]} alt="Billet 20" className="w-full h-auto object-contain rounded shadow-md" />
+                                    <span className="text-green-300 font-bold">20</span>
+                                </div>
+                                <div className="flex flex-col items-center gap-2">
+                                    <SafeImage src={ASSETS.tokens[50]} alt="Billet 50" className="w-full h-auto object-contain rounded shadow-md" />
+                                    <span className="text-green-300 font-bold">50</span>
+                                </div>
+                                <div className="flex flex-col items-center gap-2">
+                                    <SafeImage src={ASSETS.tokens[100]} alt="Billet 100" className="w-full h-auto object-contain rounded shadow-md" />
+                                    <span className="text-green-300 font-bold">100</span>
+                                </div>
                             </div>
                         </div>
 
@@ -450,8 +585,103 @@ const MaterialTab = () => {
                         </div>
                     </div>
                 </div>
-            </Section>
-        </div>
+            </Section >
+
+            {/* PLANCHES DE CARTES */}
+            < Section
+                id="cardSheets"
+                title="🃏 PLANCHES DE CARTES"
+                total={`${ASSETS.cardDecks.length} decks`}
+                color="green"
+                isOpen={expanded.cardSheets}
+                onToggle={() => toggle('cardSheets')}
+            >
+                <div className="space-y-8">
+                    <p className="text-slate-300">
+                        Toutes les planches de cartes du jeu Hegemony. Cliquez sur les images pour les voir en grand.
+                    </p>
+
+                    {/* Group by category */}
+                    {['common', 'working', 'middle', 'capitalist', 'state', 'special'].map(category => {
+                        const categoryDecks = ASSETS.cardDecks.filter(deck => deck.category === category);
+                        if (categoryDecks.length === 0) return null;
+
+                        const categoryLabels = {
+                            common: { label: '🎴 Commun', color: 'slate' },
+                            working: { label: '⚒️ Classe Ouvrière', color: 'red' },
+                            middle: { label: '🏢 Classe Moyenne', color: 'yellow' },
+                            capitalist: { label: '💼 Classe Capitaliste', color: 'blue' },
+                            state: { label: '🏛️ État', color: 'purple' },
+                            special: { label: '⭐ Spécial', color: 'pink' }
+                        };
+
+                        return (
+                            <div key={category} className="space-y-4">
+                                <h4 className="text-xl font-bold text-white">
+                                    {categoryLabels[category].label}
+                                </h4>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    {categoryDecks.map(deck => (
+                                        <div key={deck.id} className="glass-effect rounded-lg overflow-hidden hover:border-pink-500/50 transition-colors group">
+                                            <div className="relative aspect-video glass-inner-dark">
+                                                <SafeImage
+                                                    src={deck.faceUrl}
+                                                    alt={`${deck.name} - Face`}
+                                                    className="w-full h-full object-contain p-2"
+                                                />
+                                                {deck.useRemote && (
+                                                    <div className="absolute top-2 right-2 bg-pink-500/80 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
+                                                        Steam
+                                                    </div>
+                                                )}
+                                                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                                                    <a
+                                                        href={deck.faceUrl}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
+                                                        title="Voir la face en grand"
+                                                    >
+                                                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                                                        </svg>
+                                                    </a>
+                                                    {deck.backUrl && (
+                                                        <a
+                                                            href={deck.backUrl}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
+                                                            title="Voir le dos en grand"
+                                                        >
+                                                            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                                            </svg>
+                                                        </a>
+                                                    )}
+                                                </div>
+                                            </div>
+                                            <div className="p-4">
+                                                <h3 className="font-bold text-lg text-white mb-1">{deck.name}</h3>
+                                                <div className="flex justify-between text-sm text-slate-400">
+                                                    <span>Grille : {deck.grid}</span>
+                                                    <span>{deck.count} cartes</span>
+                                                </div>
+                                                {deck.steamDeckId && (
+                                                    <div className="text-xs text-slate-500 mt-1">
+                                                        Steam Deck ID: {deck.steamDeckId}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+            </Section >
+        </div >
     );
 };
 

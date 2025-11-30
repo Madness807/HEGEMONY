@@ -10,7 +10,7 @@ const PreparationPhase = ({ round, numPlayers }) => (
             Phase de Préparation
         </h4>
         {round > 1 && (
-            <div className="space-y-3">
+            <div className="space-y-6">
                 <CheckItem>Tous : Payer 5Ꝟ d'intérêts par Emprunt</CheckItem>
                 <CheckItem><ClassReference type="working" /> : Réduire Prospérité de 1</CheckItem>
                 {numPlayers >= 3 && <CheckItem><ClassReference type="middle" /> : Réduire Prospérité de 2</CheckItem>}

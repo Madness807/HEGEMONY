@@ -2,56 +2,57 @@ import React from 'react';
 import { Calculator, Scale, Users, Building2, Factory } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import ClassReference from '../../atoms/ClassReference';
+import TaxMultiplierTrack from '../../molecules/TaxMultiplierTrack';
 
 import { useGame } from '../../../context/GameContext';
 
 const TaxCalculatorTab = ({ fiscalMultiplier, taxes }) => {
     const { numPlayers, policies, players, setPlayers } = useGame();
     return (
-        <div className="space-y-8 animate-fade-in">
+        <div className="space-y-4 animate-fade-in max-w-5xl mx-auto">
+            <TaxMultiplierTrack currentValue={fiscalMultiplier} />
 
-
-            <div className="bg-gradient-to-r from-blue-900/40 to-indigo-900/40 p-6 rounded-2xl border border-blue-800 shadow-inner">
-                <div className="flex items-center gap-3 mb-2">
-                    <div className="p-2 bg-blue-800 rounded-full">
-                        <Scale className="w-6 h-6 text-blue-200" />
-                    </div>
-                    <span className="text-xl font-bold text-blue-100">Multiplicateur Fiscal : {fiscalMultiplier}</span>
-                </div>
-                <p className="text-sm text-blue-300 ml-11">
-                    Basé sur : Imposition <span className="font-bold text-white">{policies.taxation}</span>,
-                    Santé <span className="font-bold text-white">{policies.healthWelfare}</span>,
-                    Éducation <span className="font-bold text-white">{policies.education}</span>
-                </p>
+            {/* Compact Info Bar */}
+            <div className="bg-blue-900/20 py-2 px-4 rounded-lg border border-blue-800/50 flex justify-center gap-6 text-sm">
+                <span className="text-blue-300">Imposition: <span className="font-bold text-white">{policies.taxation}</span></span>
+                <span className="text-blue-300">Santé: <span className="font-bold text-white">{policies.healthWelfare}</span></span>
+                <span className="text-blue-300">Éducation: <span className="font-bold text-white">{policies.education}</span></span>
             </div>
 
             {numPlayers >= 2 && (
-                <Card className="glass-effect border-t-4 border-red-500 relative overflow-hidden">
-                    <CardContent className="pt-6">
-                        <div className="absolute top-0 right-0 p-4 opacity-5">
-                            <Users className="w-32 h-32 text-white" />
+                <Card className="bg-[#1e293b]/80 border-t-4 border-red-500 relative overflow-hidden shadow-xl">
+                    <CardContent className="p-4 flex items-center gap-6">
+                        {/* Header Section - Logo Only */}
+                        <div className="flex flex-col items-center min-w-[80px]">
+                            <div className="relative">
+                                <Users className="w-12 h-12 text-red-500/20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-150" />
+                                <ClassReference type="working" size="h-14 w-14 relative z-10" showLabel={false} />
+                            </div>
                         </div>
-                        <h3 className="text-2xl font-bold text-red-400 mb-6 flex items-center gap-2">
-                            <span className="w-3 h-8 bg-red-500 rounded-full inline-block"></span>
-                            <ClassReference type="working" size="h-8 w-8" />
-                        </h3>
-                        <div className="space-y-4 relative z-10">
-                            <div className="flex justify-between items-center p-4 glass-inner">
-                                <span className="font-semibold text-slate-300">Population</span>
+
+                        {/* Inputs & Stats Grid */}
+                        <div className="flex-1 grid grid-cols-3 gap-6 items-center">
+                            {/* Input */}
+                            <div className="flex flex-col gap-1.5">
+                                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Population</span>
                                 <input
                                     type="number"
                                     value={players.working.population}
                                     onChange={(e) => setPlayers({ ...players, working: { ...players.working, population: parseInt(e.target.value) || 0 } })}
-                                    className="w-24 px-4 py-2 bg-black/40 border border-white/20 rounded-lg text-center font-bold text-lg text-white focus:ring-2 focus:ring-red-500 outline-none"
+                                    className="w-full px-4 py-2 bg-slate-900/50 border border-slate-700 rounded-lg text-center font-bold text-white focus:ring-2 focus:ring-red-500 outline-none text-lg transition-all"
                                 />
                             </div>
-                            <div className="flex justify-between items-center p-4 bg-red-900/20 rounded-xl border border-red-900/30">
-                                <span className="font-semibold text-red-200">Impôt sur le Revenu</span>
-                                <span className="text-xl font-bold text-red-400">{taxes.working.income}Ꝟ</span>
+
+                            {/* Tax Detail */}
+                            <div className="flex flex-col gap-1 items-center bg-red-950/30 rounded-lg p-3 border border-red-900/20">
+                                <span className="text-[10px] font-bold text-red-400/80 uppercase tracking-widest">Impôt Revenu</span>
+                                <span className="font-black text-red-400 text-xl">{taxes.working.income}Ꝟ</span>
                             </div>
-                            <div className="flex justify-between items-center p-6 bg-gradient-to-r from-red-600 to-red-700 rounded-xl text-white shadow-lg transform hover:scale-[1.02] transition-transform">
-                                <span className="font-bold text-lg">TOTAL À PAYER</span>
-                                <span className="text-3xl font-bold">{taxes.working.total}Ꝟ</span>
+
+                            {/* Total */}
+                            <div className="flex flex-col gap-1 items-center bg-gradient-to-br from-red-700 to-red-900 rounded-lg p-3 shadow-lg border border-red-500/30 transform transition-transform hover:scale-105">
+                                <span className="text-[10px] font-black text-white/90 uppercase tracking-widest">Total à Payer</span>
+                                <span className="text-2xl font-black text-white">{taxes.working.total}Ꝟ</span>
                             </div>
                         </div>
                     </CardContent>
@@ -59,47 +60,56 @@ const TaxCalculatorTab = ({ fiscalMultiplier, taxes }) => {
             )}
 
             {numPlayers >= 3 && (
-                <Card className="glass-effect border-t-4 border-yellow-500 relative overflow-hidden">
-                    <CardContent className="pt-6">
-                        <div className="absolute top-0 right-0 p-4 opacity-5">
-                            <Building2 className="w-32 h-32 text-white" />
+                <Card className="bg-[#1e293b]/80 border-t-4 border-yellow-500 relative overflow-hidden shadow-xl">
+                    <CardContent className="p-4 flex items-center gap-6">
+                        {/* Header Section - Logo Only */}
+                        <div className="flex flex-col items-center min-w-[80px]">
+                            <div className="relative">
+                                <Building2 className="w-12 h-12 text-yellow-500/20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-150" />
+                                <ClassReference type="middle" size="h-14 w-14 relative z-10" showLabel={false} />
+                            </div>
                         </div>
-                        <h3 className="text-2xl font-bold text-yellow-400 mb-6 flex items-center gap-2">
-                            <span className="w-3 h-8 bg-yellow-500 rounded-full inline-block"></span>
-                            <ClassReference type="middle" size="h-8 w-8" />
-                        </h3>
-                        <div className="space-y-4 relative z-10">
-                            <div className="grid grid-cols-2 gap-4">
-                                <div className="p-4 glass-inner">
-                                    <span className="block text-sm font-semibold text-slate-400 mb-1">Population</span>
+
+                        {/* Inputs & Stats Grid */}
+                        <div className="flex-1 grid grid-cols-12 gap-4 items-center">
+                            {/* Inputs */}
+                            <div className="col-span-3 flex flex-col gap-3">
+                                <div className="flex justify-between items-center gap-2">
+                                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest w-8">Pop.</span>
                                     <input
                                         type="number"
                                         value={players.middle.population}
                                         onChange={(e) => setPlayers({ ...players, middle: { ...players.middle, population: parseInt(e.target.value) || 0 } })}
-                                        className="w-full px-3 py-2 bg-black/40 border border-white/20 rounded-lg font-bold text-lg text-white focus:ring-2 focus:ring-yellow-500 outline-none"
+                                        className="w-full px-2 py-1.5 bg-slate-900/50 border border-slate-700 rounded text-center font-bold text-white focus:ring-2 focus:ring-yellow-500 outline-none text-sm transition-all"
                                     />
                                 </div>
-                                <div className="p-4 glass-inner">
-                                    <span className="block text-sm font-semibold text-slate-400 mb-1">Entreprises</span>
+                                <div className="flex justify-between items-center gap-2">
+                                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest w-8">Ent.</span>
                                     <input
                                         type="number"
                                         value={players.middle.businesses}
                                         onChange={(e) => setPlayers({ ...players, middle: { ...players.middle, businesses: parseInt(e.target.value) || 0 } })}
-                                        className="w-full px-3 py-2 bg-black/40 border border-white/20 rounded-lg font-bold text-lg text-white focus:ring-2 focus:ring-yellow-500 outline-none"
+                                        className="w-full px-2 py-1.5 bg-slate-900/50 border border-slate-700 rounded text-center font-bold text-white focus:ring-2 focus:ring-yellow-500 outline-none text-sm transition-all"
                                     />
                                 </div>
                             </div>
-                            <div className="flex justify-between items-center p-4 bg-yellow-900/20 rounded-xl border border-yellow-900/30">
-                                <span className="font-semibold text-yellow-200">Impôt sur le Revenu</span>
-                                <span className="font-bold text-yellow-400">{taxes.middle.income}Ꝟ</span>
+
+                            {/* Tax Details */}
+                            <div className="col-span-5 grid grid-cols-2 gap-3">
+                                <div className="flex flex-col items-center bg-yellow-950/30 rounded-lg p-2 border border-yellow-900/20">
+                                    <span className="text-[10px] font-bold text-yellow-400/80 uppercase text-center tracking-widest">Impôt Rev.</span>
+                                    <span className="font-black text-yellow-400 text-lg">{taxes.middle.income}Ꝟ</span>
+                                </div>
+                                <div className="flex flex-col items-center bg-yellow-950/30 rounded-lg p-2 border border-yellow-900/20">
+                                    <span className="text-[10px] font-bold text-yellow-400/80 uppercase text-center tracking-widest">Ch. Pat.</span>
+                                    <span className="font-black text-yellow-400 text-lg">{taxes.middle.patronal}Ꝟ</span>
+                                </div>
                             </div>
-                            <div className="flex justify-between items-center p-4 bg-yellow-900/20 rounded-xl border border-yellow-900/30">
-                                <span className="font-semibold text-yellow-200">Charges Patronales</span>
-                                <span className="font-bold text-yellow-400">{taxes.middle.patronal}Ꝟ</span>
-                            </div>
-                            <div className="flex justify-between items-center p-6 bg-gradient-to-r from-yellow-600 to-yellow-700 rounded-xl text-white shadow-lg transform hover:scale-[1.02] transition-transform">
-                                <span className="font-bold text-lg">TOTAL À PAYER</span>
-                                <span className="text-3xl font-bold">{taxes.middle.total}Ꝟ</span>
+
+                            {/* Total */}
+                            <div className="col-span-4 flex flex-col gap-1 items-center justify-center bg-gradient-to-br from-yellow-600 to-yellow-800 rounded-lg p-3 shadow-lg border border-yellow-500/30 h-full transform transition-transform hover:scale-105">
+                                <span className="text-[10px] font-black text-white/90 uppercase tracking-widest">Total à Payer</span>
+                                <span className="text-2xl font-black text-white">{taxes.middle.total}Ꝟ</span>
                             </div>
                         </div>
                     </CardContent>
@@ -107,47 +117,56 @@ const TaxCalculatorTab = ({ fiscalMultiplier, taxes }) => {
             )}
 
             {numPlayers >= 2 && (
-                <Card className="glass-effect border-t-4 border-blue-500 relative overflow-hidden">
-                    <CardContent className="pt-6">
-                        <div className="absolute top-0 right-0 p-4 opacity-5">
-                            <Factory className="w-32 h-32 text-white" />
+                <Card className="bg-[#1e293b]/80 border-t-4 border-blue-500 relative overflow-hidden shadow-xl">
+                    <CardContent className="p-4 flex items-center gap-6">
+                        {/* Header Section - Logo Only */}
+                        <div className="flex flex-col items-center min-w-[80px]">
+                            <div className="relative">
+                                <Factory className="w-12 h-12 text-blue-500/20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-150" />
+                                <ClassReference type="capitalist" size="h-14 w-14 relative z-10" showLabel={false} />
+                            </div>
                         </div>
-                        <h3 className="text-2xl font-bold text-blue-400 mb-6 flex items-center gap-2">
-                            <span className="w-3 h-8 bg-blue-500 rounded-full inline-block"></span>
-                            <ClassReference type="capitalist" size="h-8 w-8" />
-                        </h3>
-                        <div className="space-y-4 relative z-10">
-                            <div className="grid grid-cols-2 gap-4">
-                                <div className="p-4 glass-inner">
-                                    <span className="block text-sm font-semibold text-slate-400 mb-1">Chiffre d'Affaires</span>
+
+                        {/* Inputs & Stats Grid */}
+                        <div className="flex-1 grid grid-cols-12 gap-4 items-center">
+                            {/* Inputs */}
+                            <div className="col-span-3 flex flex-col gap-3">
+                                <div className="flex justify-between items-center gap-2">
+                                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest w-8">C.A.</span>
                                     <input
                                         type="number"
                                         value={players.capitalist.revenue}
                                         onChange={(e) => setPlayers({ ...players, capitalist: { ...players.capitalist, revenue: parseInt(e.target.value) || 0 } })}
-                                        className="w-full px-3 py-2 bg-black/40 border border-white/20 rounded-lg font-bold text-lg text-white focus:ring-2 focus:ring-blue-500 outline-none"
+                                        className="w-full px-2 py-1.5 bg-slate-900/50 border border-slate-700 rounded text-center font-bold text-white focus:ring-2 focus:ring-blue-500 outline-none text-sm transition-all"
                                     />
                                 </div>
-                                <div className="p-4 glass-inner">
-                                    <span className="block text-sm font-semibold text-slate-400 mb-1">Entreprises Ops.</span>
+                                <div className="flex justify-between items-center gap-2">
+                                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest w-8">Ent.</span>
                                     <input
                                         type="number"
                                         value={players.capitalist.businesses}
                                         onChange={(e) => setPlayers({ ...players, capitalist: { ...players.capitalist, businesses: parseInt(e.target.value) || 0 } })}
-                                        className="w-full px-3 py-2 bg-black/40 border border-white/20 rounded-lg font-bold text-lg text-white focus:ring-2 focus:ring-blue-500 outline-none"
+                                        className="w-full px-2 py-1.5 bg-slate-900/50 border border-slate-700 rounded text-center font-bold text-white focus:ring-2 focus:ring-blue-500 outline-none text-sm transition-all"
                                     />
                                 </div>
                             </div>
-                            <div className="flex justify-between items-center p-4 bg-blue-900/20 rounded-xl border border-blue-900/30">
-                                <span className="font-semibold text-blue-200">Charges Patronales</span>
-                                <span className="font-bold text-blue-400">{taxes.capitalist.patronal}Ꝟ</span>
+
+                            {/* Tax Details */}
+                            <div className="col-span-5 grid grid-cols-2 gap-3">
+                                <div className="flex flex-col items-center bg-blue-950/30 rounded-lg p-2 border border-blue-900/20">
+                                    <span className="text-[10px] font-bold text-blue-300/80 uppercase text-center tracking-widest">Ch. Pat.</span>
+                                    <span className="font-black text-blue-400 text-lg">{taxes.capitalist.patronal}Ꝟ</span>
+                                </div>
+                                <div className="flex flex-col items-center bg-blue-950/30 rounded-lg p-2 border border-blue-900/20">
+                                    <span className="text-[10px] font-bold text-blue-300/80 uppercase text-center tracking-widest">Impôt Soc.</span>
+                                    <span className="font-black text-blue-400 text-lg">{taxes.capitalist.corporate}Ꝟ</span>
+                                </div>
                             </div>
-                            <div className="flex justify-between items-center p-4 bg-blue-900/20 rounded-xl border border-blue-900/30">
-                                <span className="font-semibold text-blue-200">Impôt sur les Sociétés</span>
-                                <span className="font-bold text-blue-400">{taxes.capitalist.corporate}Ꝟ</span>
-                            </div>
-                            <div className="flex justify-between items-center p-6 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl text-white shadow-lg transform hover:scale-[1.02] transition-transform">
-                                <span className="font-bold text-lg">TOTAL À PAYER</span>
-                                <span className="text-3xl font-bold">{taxes.capitalist.total}Ꝟ</span>
+
+                            {/* Total */}
+                            <div className="col-span-4 flex flex-col gap-1 items-center justify-center bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg p-3 shadow-lg border border-blue-500/30 h-full transform transition-transform hover:scale-105">
+                                <span className="text-[10px] font-black text-white/90 uppercase tracking-widest">Total à Payer</span>
+                                <span className="text-2xl font-black text-white">{taxes.capitalist.total}Ꝟ</span>
                             </div>
                         </div>
                     </CardContent>

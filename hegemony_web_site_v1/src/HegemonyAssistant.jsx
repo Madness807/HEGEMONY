@@ -4,15 +4,16 @@ import { useTaxCalculator } from './hooks/useTaxCalculator';
 import Header from './components/organisms/Header';
 import Sidebar from './components/organisms/Sidebar';
 import SetupGuideTab from './components/organisms/tabs/SetupGuideTab';
-import SetupTab from './components/organisms/tabs/SetupTab';
+import PoliciesTab from './components/organisms/tabs/PoliciesTab';
 import MaterialTab from './components/organisms/tabs/MaterialTab';
 import RulesTab from './components/organisms/tabs/RulesTab';
 import PhaseAssistantTab from './components/organisms/tabs/PhaseAssistantTab';
 import StateDashboardTab from './components/organisms/tabs/StateDashboardTab';
 import TaxCalculatorTab from './components/organisms/tabs/TaxCalculatorTab';
-import InteractiveBoard from './components/organisms/InteractiveBoard';
-import FMIGuideTab from './components/organisms/tabs/FMIGuideTab';
-import GalleryTab from './components/organisms/tabs/GalleryTab';
+import BoardTab from './components/organisms/tabs/BoardTab';
+import FAQTab from './components/organisms/tabs/FAQTab';
+import OtherRulesTab from './components/organisms/tabs/OtherRulesTab';
+import ShopTab from './components/organisms/tabs/ShopTab';
 import CreditsTab from './components/organisms/tabs/CreditsTab';
 import HomeTab from './components/organisms/tabs/HomeTab';
 
@@ -46,8 +47,8 @@ const HegemonyContent = () => {
                         {activeTab === 'home' && <HomeTab />}
                         {activeTab === 'setup-guide' && <SetupGuideTab numPlayers={numPlayers} />}
 
-                        {activeTab === 'setup' && (
-                            <SetupTab />
+                        {activeTab === 'policies' && (
+                            <PoliciesTab />
                         )}
 
                         {activeTab === 'material' && <MaterialTab />}
@@ -67,11 +68,13 @@ const HegemonyContent = () => {
                             />
                         )}
 
-                        {activeTab === 'board' && <InteractiveBoard />}
+                        {activeTab === 'board' && <BoardTab />}
 
-                        {activeTab === 'gallery' && <GalleryTab />}
+                        {activeTab === 'faq' && <FAQTab />}
 
-                        {activeTab === 'fmi' && <FMIGuideTab />}
+                        {activeTab === 'shop' && <ShopTab />}
+
+                        {activeTab === 'other-rules' && <OtherRulesTab />}
 
                         {activeTab === 'credits' && <CreditsTab />}
                     </div>

@@ -10,8 +10,8 @@ const ScoringPhase = ({ numPlayers }) => (
             <Calculator className="w-6 h-6" />
             Phase de Décompte
         </h4>
-        <GlassCard className="p-8 rounded-xl border border-red-800">
-            <div className="space-y-4">
+        <GlassCard className="p-10 rounded-xl border border-red-800">
+            <div className="space-y-6">
                 <CheckItem><ClassReference type="working" /> : +2 PV par Syndicat</CheckItem>
                 {numPlayers >= 3 && <CheckItem><ClassReference type="middle" /> : +1 Prospérité si &lt; Entreprises Ops</CheckItem>}
                 <CheckItem><ClassReference type="capitalist" /> : Transférer CA → Capital, PV selon tableau</CheckItem>

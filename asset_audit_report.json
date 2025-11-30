@@ -1,0 +1,479 @@
+{
+  "totalImages": 94,
+  "used": 49,
+  "unused": 45,
+  "unusedImages": [
+    {
+      "name": "fond_page.png",
+      "path": "board/fond_page.png",
+      "category": "board"
+    },
+    {
+      "name": "main_board.jpg",
+      "path": "board/main_board.jpg",
+      "category": "board"
+    },
+    {
+      "name": "accord_comercial.jpg",
+      "path": "classes/capitalist/cards/accord_comercial.jpg",
+      "category": "classes"
+    },
+    {
+      "name": "accord_comerciaux_back.png",
+      "path": "classes/capitalist/cards/accord_comerciaux_back.png",
+      "category": "classes"
+    },
+    {
+      "name": "legitimity_worker.png",
+      "path": "classes/state/legitimity_worker.png",
+      "category": "classes"
+    },
+    {
+      "name": "legitimité_capitalist.png",
+      "path": "classes/state/legitimité_capitalist.png",
+      "category": "classes"
+    },
+    {
+      "name": "legitimité_classe_moyenne.png",
+      "path": "classes/state/legitimité_classe_moyenne.png",
+      "category": "classes"
+    },
+    {
+      "name": "vote_no.png",
+      "path": "classes/state/vote_no.png",
+      "category": "classes"
+    },
+    {
+      "name": "vote_yes.png",
+      "path": "classes/state/vote_yes.png",
+      "category": "classes"
+    },
+    {
+      "name": "worker_company.png",
+      "path": "classes/working/cards/worker_company.png",
+      "category": "classes"
+    },
+    {
+      "name": "worker_vote_no.png.png",
+      "path": "classes/working/worker_vote_no.png.png",
+      "category": "classes"
+    },
+    {
+      "name": "worker_vote_yes.png",
+      "path": "classes/working/worker_vote_yes.png",
+      "category": "classes"
+    },
+    {
+      "name": "loan_back_card.png",
+      "path": "common/cards/loan/loan_back_card.png",
+      "category": "common"
+    },
+    {
+      "name": "loan_card.png",
+      "path": "common/cards/loan/loan_card.png",
+      "category": "common"
+    },
+    {
+      "name": "unknown_deck_877d75.png",
+      "path": "common/cards/unknown_deck_877d75.png",
+      "category": "common"
+    },
+    {
+      "name": "actions_050e06.jpg",
+      "path": "common/cards/unsorted_do_not_touch/actions_050e06.jpg",
+      "category": "common"
+    },
+    {
+      "name": "actions_2979ae.jpg",
+      "path": "common/cards/unsorted_do_not_touch/actions_2979ae.jpg",
+      "category": "common"
+    },
+    {
+      "name": "actions_6788de.jpg",
+      "path": "common/cards/unsorted_do_not_touch/actions_6788de.jpg",
+      "category": "common"
+    },
+    {
+      "name": "actions_d8d5a1.jpg",
+      "path": "common/cards/unsorted_do_not_touch/actions_d8d5a1.jpg",
+      "category": "common"
+    },
+    {
+      "name": "class_1_face.jpg",
+      "path": "common/cards/unsorted_do_not_touch/class_1_face.jpg",
+      "category": "common"
+    },
+    {
+      "name": "class_2_face.jpg",
+      "path": "common/cards/unsorted_do_not_touch/class_2_face.jpg",
+      "category": "common"
+    },
+    {
+      "name": "class_3_face.jpg",
+      "path": "common/cards/unsorted_do_not_touch/class_3_face.jpg",
+      "category": "common"
+    },
+    {
+      "name": "deck_1_face.jpg",
+      "path": "common/cards/unsorted_do_not_touch/deck_1_face.jpg",
+      "category": "common"
+    },
+    {
+      "name": "deck_3_face.jpg",
+      "path": "common/cards/unsorted_do_not_touch/deck_3_face.jpg",
+      "category": "common"
+    },
+    {
+      "name": "deck_4_face.jpg",
+      "path": "common/cards/unsorted_do_not_touch/deck_4_face.jpg",
+      "category": "common"
+    },
+    {
+      "name": "small_2_face.jpg",
+      "path": "common/cards/unsorted_do_not_touch/small_2_face.jpg",
+      "category": "common"
+    },
+    {
+      "name": "unknown_deck.jpg",
+      "path": "common/cards/unsorted_do_not_touch/unknown_deck.jpg",
+      "category": "common"
+    },
+    {
+      "name": "unknown_deck_304415.jpg",
+      "path": "common/cards/unsorted_do_not_touch/unknown_deck_304415.jpg",
+      "category": "common"
+    },
+    {
+      "name": "unknown_deck_432800.jpg",
+      "path": "common/cards/unsorted_do_not_touch/unknown_deck_432800.jpg",
+      "category": "common"
+    },
+    {
+      "name": "unknown_deck_5778bb.jpg",
+      "path": "common/cards/unsorted_do_not_touch/unknown_deck_5778bb.jpg",
+      "category": "common"
+    },
+    {
+      "name": "unknown_deck_5b6f80.jpg",
+      "path": "common/cards/unsorted_do_not_touch/unknown_deck_5b6f80.jpg",
+      "category": "common"
+    },
+    {
+      "name": "unknown_deck_62b84d.jpg",
+      "path": "common/cards/unsorted_do_not_touch/unknown_deck_62b84d.jpg",
+      "category": "common"
+    },
+    {
+      "name": "unknown_deck_7b3060.jpg",
+      "path": "common/cards/unsorted_do_not_touch/unknown_deck_7b3060.jpg",
+      "category": "common"
+    },
+    {
+      "name": "unknown_deck_7b9911.jpg",
+      "path": "common/cards/unsorted_do_not_touch/unknown_deck_7b9911.jpg",
+      "category": "common"
+    },
+    {
+      "name": "unknown_deck_8ded8d.jpg",
+      "path": "common/cards/unsorted_do_not_touch/unknown_deck_8ded8d.jpg",
+      "category": "common"
+    },
+    {
+      "name": "unknown_deck_95f3d8.jpg",
+      "path": "common/cards/unsorted_do_not_touch/unknown_deck_95f3d8.jpg",
+      "category": "common"
+    },
+    {
+      "name": "unknown_deck_9d6706.jpg",
+      "path": "common/cards/unsorted_do_not_touch/unknown_deck_9d6706.jpg",
+      "category": "common"
+    },
+    {
+      "name": "unknown_deck_a121d5.jpg",
+      "path": "common/cards/unsorted_do_not_touch/unknown_deck_a121d5.jpg",
+      "category": "common"
+    },
+    {
+      "name": "unknown_deck_a8b0d4.jpg",
+      "path": "common/cards/unsorted_do_not_touch/unknown_deck_a8b0d4.jpg",
+      "category": "common"
+    },
+    {
+      "name": "unknown_deck_af4159.jpg",
+      "path": "common/cards/unsorted_do_not_touch/unknown_deck_af4159.jpg",
+      "category": "common"
+    },
+    {
+      "name": "unknown_deck_e1495a.jpg",
+      "path": "common/cards/unsorted_do_not_touch/unknown_deck_e1495a.jpg",
+      "category": "common"
+    },
+    {
+      "name": "unknown_deck_e4d37c.jpg",
+      "path": "common/cards/unsorted_do_not_touch/unknown_deck_e4d37c.jpg",
+      "category": "common"
+    },
+    {
+      "name": "unknown_deck_e5d974.jpg",
+      "path": "common/cards/unsorted_do_not_touch/unknown_deck_e5d974.jpg",
+      "category": "common"
+    },
+    {
+      "name": "unknown_deck_e9fac7.jpg",
+      "path": "common/cards/unsorted_do_not_touch/unknown_deck_e9fac7.jpg",
+      "category": "common"
+    },
+    {
+      "name": "unknown_deck_f6f188.jpg",
+      "path": "common/cards/unsorted_do_not_touch/unknown_deck_f6f188.jpg",
+      "category": "common"
+    }
+  ],
+  "usedImages": [
+    {
+      "name": "board.png",
+      "path": "classes/capitalist/board.png",
+      "category": "classes"
+    },
+    {
+      "name": "capitalist_logo.png",
+      "path": "classes/capitalist/capitalist_logo.png",
+      "category": "classes"
+    },
+    {
+      "name": "business_deals.jpg",
+      "path": "classes/capitalist/cards/business_deals.jpg",
+      "category": "classes"
+    },
+    {
+      "name": "business_deals_back.png",
+      "path": "classes/capitalist/cards/business_deals_back.png",
+      "category": "classes"
+    },
+    {
+      "name": "capitalist_class_companies.jpg",
+      "path": "classes/capitalist/cards/capitalist_class_companies.jpg",
+      "category": "classes"
+    },
+    {
+      "name": "capitalist_class_companies_back.png",
+      "path": "classes/capitalist/cards/capitalist_class_companies_back.png",
+      "category": "classes"
+    },
+    {
+      "name": "capitalist_company.png",
+      "path": "classes/capitalist/cards/capitalist_company.png",
+      "category": "classes"
+    },
+    {
+      "name": "class_capitalist_back.png",
+      "path": "classes/capitalist/cards/class_capitalist_back.png",
+      "category": "classes"
+    },
+    {
+      "name": "board.png",
+      "path": "classes/middle/board.png",
+      "category": "classes"
+    },
+    {
+      "name": "class_middle__back.png",
+      "path": "classes/middle/cards/class_middle__back.png",
+      "category": "classes"
+    },
+    {
+      "name": "middle_class_companies.jpg",
+      "path": "classes/middle/cards/middle_class_companies.jpg",
+      "category": "classes"
+    },
+    {
+      "name": "middle_class_companies_back.png",
+      "path": "classes/middle/cards/middle_class_companies_back.png",
+      "category": "classes"
+    },
+    {
+      "name": "middle_class_company.png",
+      "path": "classes/middle/cards/middle_class_company.png",
+      "category": "classes"
+    },
+    {
+      "name": "middle_class_logo.png",
+      "path": "classes/middle/middle_class_logo.png",
+      "category": "classes"
+    },
+    {
+      "name": "board.png",
+      "path": "classes/state/board.png",
+      "category": "classes"
+    },
+    {
+      "name": "actions_card_state.jpg",
+      "path": "classes/state/cards/actions_card_state.jpg",
+      "category": "classes"
+    },
+    {
+      "name": "agenda politique card.jpg",
+      "path": "classes/state/cards/agenda politique card.jpg",
+      "category": "classes"
+    },
+    {
+      "name": "agendapolitiquecardback.png",
+      "path": "classes/state/cards/agendapolitiquecardback.png",
+      "category": "classes"
+    },
+    {
+      "name": "board.png",
+      "path": "classes/working/board.png",
+      "category": "classes"
+    },
+    {
+      "name": "class_worker_back.png",
+      "path": "classes/working/cards/class_worker_back.png",
+      "category": "classes"
+    },
+    {
+      "name": "manifestation.png",
+      "path": "classes/working/tokens/manifestation.png",
+      "category": "classes"
+    },
+    {
+      "name": "strike.png",
+      "path": "classes/working/tokens/strike.png",
+      "category": "classes"
+    },
+    {
+      "name": "worker_logo.png",
+      "path": "classes/working/worker_logo.png",
+      "category": "classes"
+    },
+    {
+      "name": "events.jpg",
+      "path": "common/cards/events/events.jpg",
+      "category": "common"
+    },
+    {
+      "name": "events_back_card.png",
+      "path": "common/cards/events/events_back_card.png",
+      "category": "common"
+    },
+    {
+      "name": "exports.jpg",
+      "path": "common/cards/export/exports.jpg",
+      "category": "common"
+    },
+    {
+      "name": "exports_back.png",
+      "path": "common/cards/export/exports_back.png",
+      "category": "common"
+    },
+    {
+      "name": "actions.jpg",
+      "path": "common/cards/unsorted_do_not_touch/actions.jpg",
+      "category": "common"
+    },
+    {
+      "name": "coin_1.png",
+      "path": "common/currency/coin_1.png",
+      "category": "common"
+    },
+    {
+      "name": "coin_10.png",
+      "path": "common/currency/coin_10.png",
+      "category": "common"
+    },
+    {
+      "name": "coin_100.png",
+      "path": "common/currency/coin_100.png",
+      "category": "common"
+    },
+    {
+      "name": "coin_20.png",
+      "path": "common/currency/coin_20.png",
+      "category": "common"
+    },
+    {
+      "name": "coin_5.png",
+      "path": "common/currency/coin_5.png",
+      "category": "common"
+    },
+    {
+      "name": "coin_50.png",
+      "path": "common/currency/coin_50.png",
+      "category": "common"
+    },
+    {
+      "name": "education_1.png",
+      "path": "common/resources/education/education_1.png",
+      "category": "common"
+    },
+    {
+      "name": "education_3.png",
+      "path": "common/resources/education/education_3.png",
+      "category": "common"
+    },
+    {
+      "name": "education_5.png",
+      "path": "common/resources/education/education_5.png",
+      "category": "common"
+    },
+    {
+      "name": "food_1.png",
+      "path": "common/resources/food/food_1.png",
+      "category": "common"
+    },
+    {
+      "name": "food_3.png",
+      "path": "common/resources/food/food_3.png",
+      "category": "common"
+    },
+    {
+      "name": "food_5.png",
+      "path": "common/resources/food/food_5.png",
+      "category": "common"
+    },
+    {
+      "name": "health_1.png",
+      "path": "common/resources/health/health_1.png",
+      "category": "common"
+    },
+    {
+      "name": "health_3.png",
+      "path": "common/resources/health/health_3.png",
+      "category": "common"
+    },
+    {
+      "name": "health_5.png",
+      "path": "common/resources/health/health_5.png",
+      "category": "common"
+    },
+    {
+      "name": "luxury_1.png",
+      "path": "common/resources/luxury/luxury_1.png",
+      "category": "common"
+    },
+    {
+      "name": "luxury_3.png",
+      "path": "common/resources/luxury/luxury_3.png",
+      "category": "common"
+    },
+    {
+      "name": "luxury_5.png",
+      "path": "common/resources/luxury/luxury_5.png",
+      "category": "common"
+    },
+    {
+      "name": "free_trade.png",
+      "path": "common/tokens/free_trade.png",
+      "category": "common"
+    },
+    {
+      "name": "machinery.jpg",
+      "path": "common/tokens/machinery.jpg",
+      "category": "common"
+    },
+    {
+      "name": "storage.png",
+      "path": "common/tokens/storage.png",
+      "category": "common"
+    }
+  ]
+}

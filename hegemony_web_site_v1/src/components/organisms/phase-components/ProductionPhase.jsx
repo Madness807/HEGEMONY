@@ -10,8 +10,8 @@ const ProductionPhase = () => (
             Phase de Production
         </h4>
         <p className="text-slate-400 font-bold">Ordre inversé :</p>
-        <div className="grid md:grid-cols-2 gap-4">
-            <GlassCard className="p-5 rounded-xl border border-slate-700">
+        <div className="grid md:grid-cols-2 gap-6">
+            <GlassCard className="p-6 rounded-xl border border-slate-700">
                 <h5 className="font-bold mb-3 text-white flex items-center gap-2">
                     <span className="bg-slate-700 text-slate-300 w-6 h-6 rounded flex items-center justify-center text-xs">1</span>
                     Production
@@ -22,7 +22,7 @@ const ProductionPhase = () => (
                     <CheckItem>Relever les Travailleurs</CheckItem>
                 </ul>
             </GlassCard>
-            <GlassCard className="p-5 rounded-xl border border-slate-700">
+            <GlassCard className="p-6 rounded-xl border border-slate-700">
                 <h5 className="font-bold mb-3 text-white flex items-center gap-2">
                     <span className="bg-slate-700 text-slate-300 w-6 h-6 rounded flex items-center justify-center text-xs">2</span>
                     Besoins
@@ -31,7 +31,7 @@ const ProductionPhase = () => (
                     <CheckItem>Acheter Nourriture</CheckItem>
                 </ul>
             </GlassCard>
-            <GlassCard className="p-5 rounded-xl border border-slate-700">
+            <GlassCard className="p-6 rounded-xl border border-slate-700">
                 <h5 className="font-bold mb-3 text-white flex items-center gap-2">
                     <span className="bg-slate-700 text-slate-300 w-6 h-6 rounded flex items-center justify-center text-xs">3</span>
                     FMI
@@ -40,7 +40,7 @@ const ProductionPhase = () => (
                     <CheckItem>Vérifier limite d'Emprunts</CheckItem>
                 </ul>
             </GlassCard>
-            <GlassCard className="p-5 rounded-xl border border-slate-700">
+            <GlassCard className="p-6 rounded-xl border border-slate-700">
                 <h5 className="font-bold mb-3 text-white flex items-center gap-2">
                     <span className="bg-slate-700 text-slate-300 w-6 h-6 rounded flex items-center justify-center text-xs">4</span>
                     Impôts

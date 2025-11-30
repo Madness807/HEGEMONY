@@ -24,15 +24,16 @@ export const useGameData = () => {
     const TABS = [
         { id: 'home', name: t('tabs.home', { ns: 'common', defaultValue: 'Accueil' }), icon: 'Home' },
         { id: 'setup-guide', name: t('tabs.setupGuide', { ns: 'common' }), icon: 'Package' },
-        { id: 'setup', name: t('tabs.setup', { ns: 'common' }), icon: 'Users' },
+        { id: 'policies', name: t('tabs.policies', { ns: 'common', defaultValue: 'Politique' }), icon: 'Users' },
         { id: 'phases', name: t('tabs.phases', { ns: 'common' }), icon: 'Play' },
         { id: 'board', name: t('tabs.board', { ns: 'common' }), icon: 'Map' },
         { id: 'state-dashboard', name: t('tabs.stateDashboard', { ns: 'common' }), icon: 'Landmark' },
         { id: 'taxes', name: t('tabs.taxes', { ns: 'common' }), icon: 'Calculator' },
-        { id: 'fmi', name: t('tabs.fmi', { ns: 'common' }), icon: 'AlertCircle' },
+        { id: 'other-rules', name: t('tabs.otherRules', { ns: 'common', defaultValue: 'Autres Règles' }), icon: 'BookOpen' },
         { id: 'rules', name: t('tabs.rules', { ns: 'common' }), icon: 'BookOpen' },
         { id: 'material', name: t('tabs.material', { ns: 'common' }), icon: 'Box' },
-        { id: 'gallery', name: t('tabs.gallery', { ns: 'common' }), icon: 'Image' },
+        { id: 'faq', name: t('tabs.faq', { ns: 'common', defaultValue: 'FAQ' }), icon: 'HelpCircle' },
+        { id: 'shop', name: t('tabs.shop', { ns: 'common', defaultValue: 'Boutique' }), icon: 'ShoppingBag' },
         { id: 'credits', name: t('tabs.credits', { ns: 'common' }), icon: 'Info' }
     ];
 
@@ -283,15 +284,16 @@ export const useGameData = () => {
 // For backward compatibility, keep old exports but they won't be translated
 export const TABS = [
     { id: 'setup-guide', name: 'Setup Guide', icon: 'Package' },
-    { id: 'setup', name: 'Setup', icon: 'Users' },
+    { id: 'policies', name: 'Policies', icon: 'Users' },
     { id: 'phases', name: 'Phases', icon: 'Play' },
     { id: 'board', name: 'Board', icon: 'Map' },
     { id: 'taxes', name: 'Taxes', icon: 'Calculator' },
     { id: 'legitimacy', name: 'Legitimacy', icon: 'TrendingUp' },
     { id: 'resources', name: 'Resources', icon: 'Wallet' },
-    { id: 'fmi', name: 'IMF', icon: 'AlertCircle' },
+    { id: 'other-rules', name: 'Other Rules', icon: 'BookOpen' },
     { id: 'rules', name: 'Rules', icon: 'BookOpen' },
     { id: 'material', name: 'Material', icon: 'Box' },
-    { id: 'gallery', name: 'Gallery', icon: 'Image' },
+    { id: 'faq', name: 'FAQ', icon: 'HelpCircle' },
+    { id: 'shop', name: 'Shop', icon: 'ShoppingBag' },
     { id: 'credits', name: 'Credits', icon: 'Info' }
 ];
